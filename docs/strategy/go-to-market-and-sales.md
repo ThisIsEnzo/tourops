@@ -1,115 +1,78 @@
-# Go-to-Market & First Sales Plan
+# Go-to-Market — Zero-Budget Inbound First
 
-**Status:** proposed discovery and sales motion.  
+**Status:** proposed. No campaign has been published and no prospects have been contacted.  
 **Initial geography:** Pattaya / Na Jomtien / Sattahip / Rayong, Thailand.  
-**Review date:** 2026-11-16
+**Cash budget:** $0.  
+**Founder role:** technical only; no cold sales or sales calls.
 
-## 1. First sales objective
+## 1. Go-to-market principle
 
-Do not sell "software" in the abstract. Sell a bounded improvement to one expensive workflow.
+Do not begin with cold outbound or pressure-based selling. Prepare a useful public concept and let interested operators self-select through an inbound route.
 
-Initial offer to test:
+This is slower and may produce weak signals. It is a deliberate trade-off to respect the founder's preferred role and zero-cash constraint.
 
-> In a short paid pilot, we map how your team handles a charter or activity booking from enquiry to departure, then set up one shared workflow for quotes, availability, resource assignment, deposit status and the departure run sheet. We measure whether it reduces manual coordination and missed details. No long-term commitment.
+## 2. First audience
 
-Adapt the workflow after discovery; do not claim all features exist.
+Provisional audience:
+- owner-led marine-experience businesses;
+- private yacht / boat charter operators;
+- sailing schools and dive centres with courses, trips and equipment;
+- operators coordinating boats, crew, instructors, transfers or add-ons.
 
-## 2. Account-based outreach
+Publicly visible companies in the prospect list are examples for desk research only, not a list to cold-contact.
 
-Start with 20–30 named local businesses, not mass ads. Prioritize:
-1. owner-led operators with multiple boats/resources or partner fleets;
-2. operators combining private charters and scheduled trips;
-3. dive/sailing schools with courses, trips, instructors and equipment;
-4. operators publicly describing custom itineraries, add-ons, crew and deposits.
+## 3. Content offer
 
-Public websites are a starting point only. Confirm the legal entity, decision-maker, operating model and current software during contact.
+Prepare a genuinely useful asset:
+- Charter Departure Readiness Checklist;
+- From Enquiry to Departure: Marine Operator Workflow Map;
+- or a simple resource-allocation / trip run-sheet template.
 
-## 3. Outreach sequence
+The asset should help an operator even if they never use TourOps. It should not be a disguised sales brochure.
 
-### Touch 1 — personalized introduction
-- Mention a real public detail (e.g. custom charters, multiple trip formats, fleet or course schedule).
-- Ask for 20 minutes to understand how enquiries become confirmed, prepared trips.
-- Do not claim to know their internal pain.
-- Do not lead with an AI pitch or send a generic feature list.
+## 4. Concept page
 
-### Touch 2 — useful observation
-After a response or conversation, share a one-page workflow map based only on what they told you. Ask which step creates the most rework or risk.
+Explain who the concept is for, the specific workflow being explored, what the demo simulates, what is not implemented yet, and how an operator can share feedback or request a walkthrough.
 
-### Touch 3 — paid pilot proposal
-Offer one bounded pilot with:
-- a single workflow and team;
-- start/end dates;
-- agreed data and responsibilities;
-- one or two measurable success criteria;
-- price, payment timing and support boundaries;
-- clear exit/export process.
+Use fictional demo data. Do not imply partnerships, live integrations, customer results or time savings.
 
-### Touch 4 — follow-up
-One polite follow-up after 3–5 business days, then close the loop. No repeated unsolicited messaging.
+Possible CTA:
+"Are you involved in running a marine or activity operation? Share which step between enquiry and departure creates the most manual work."
 
-## 4. Discovery call agenda (25 minutes)
+## 5. Inbound qualification
 
-1. 3 min — understand products, customers and booking volume.
-2. 8 min — walk through one recent booking from enquiry to departure.
-3. 5 min — identify the biggest failure/rework and quantify impact.
-4. 4 min — understand current tools and why they are insufficient.
-5. 3 min — ask who decides and whether a paid pilot is worth considering.
-6. 2 min — agree next step.
+Use a short form or email link. Ask about operator type and location, booking/resource complexity, current booking and communication tools, the most recent operational problem, frequency/impact and interest in reviewing a concept.
 
-## 5. Paid pilot structure
+Do not collect passenger lists, customer contact details, payment details or other sensitive business data at this stage.
 
-Recommended pilot duration: 4–6 weeks after process mapping. Keep the initial pilot narrow.
+## 6. Demonstration
 
-Possible deliverables:
-- configured booking and resource register;
-- one shared departure view/run sheet;
-- deposit/balance status visibility;
-- templates and staff onboarding;
-- weekly review of agreed metrics.
+Use a 5–7 minute synthetic scenario:
+1. Create an enquiry.
+2. Draft a quote.
+3. Record a confirmed booking and deposit status.
+4. Assign a fictional vessel and crew.
+5. Prepare a departure run sheet.
+6. Show what is simulated and ask which step is relevant.
 
-Pilot price test: ฿3,000–฿6,000/month plus ฿5,000–฿12,000 setup, or a single fixed pilot fee. This is a hypothesis; adjust after interviews.
+Do not present simulated capability as an existing production feature.
 
-Success metrics must be agreed before launch. Examples:
-- reduce time to prepare a departure run sheet;
-- reduce manual duplicate entry;
-- improve percentage of enquiries receiving follow-up;
-- reduce resource conflicts or missing departure information.
+## 7. What not to do
 
-## 6. First 30-day activity targets
+No cold calls, unsolicited DMs or mass email. No paid ads or purchased lead lists. No generic AI chatbot pitch. No inflated ROI or integration claims. No free custom implementation for an unqualified prospect. No paid sales hire during the $0 validation phase.
 
-Targets, not claims:
-- build a list of 25 accounts;
-- identify 10 decision-makers;
-- send 10–15 tailored introductions;
-- complete 8–10 discovery calls;
-- create 3 pilot proposals;
-- close 1–2 paid pilots.
+## 8. Later commercial path
 
-If response is low, test referral introductions, marina/industry networks and in-person visits before increasing outbound volume.
+Only after credible inbound interest:
+- offer an async concept review first;
+- use a short technical walkthrough if the founder is comfortable;
+- if repeated commercial qualification and follow-up are needed, consider a revenue-share / commission business-development partner with written terms and no upfront retainer;
+- do not give equity or exclusivity without independent review and a proven need.
 
-## 7. Sales materials to prepare
+A paid pilot is still the eventual willingness-to-pay test. An inbound request, interview or letter of interest is weaker evidence.
 
-- one-page problem/outcome sheet;
-- 5-minute clickable workflow demo or spreadsheet prototype;
-- pilot scope and price sheet;
-- privacy/data handling summary;
-- customer interview notes and simple ROI calculator.
+## 9. Weekly metrics
 
-Do not build a polished marketing website before a clear offer and buyer are established.
+Track content assets prepared / published separately, page views if measurable, relevant operator visits if measurable, inbound responses, substantive problem descriptions, demo requests, requests for pilot/pricing, and actual paid commitments.
 
-## 8. Sales conduct and data handling
-
-- Contact only through public business channels and respect channel preferences.
-- Do not scrape personal contact data or bulk-message.
-- Do not put customer or passenger data into demos without permission.
-- Use dummy data for demonstrations.
-- Confirm consent, retention, access and deletion requirements before handling personal data.
-- Do not promise integration or availability checks until technically verified.
-
-## 9. 7-day next actions
-
-1. Select 10 best-fit prospects from the initial list.
-2. Prepare a short interview message in English; use Thai-language assistance if needed.
-3. Contact 5 prospects personally and request discovery calls.
-4. Conduct at least 3 interviews before changing MVP scope.
-5. Record exact workflow, recent pain and willingness to pay in the scorecard.
+Never confuse reach with demand.
