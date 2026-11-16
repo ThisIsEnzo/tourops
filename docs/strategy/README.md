@@ -1,45 +1,49 @@
 # TourOps — Commercial Strategy
 
-**Status:** hypothesis / customer discovery. Not a validated product plan.
-**Last reviewed:** 2026-11-16
+**Status:** hypothesis / zero-budget validation. Not a validated product plan.  
+**Last reviewed:** 2026-11-16  
+**Operating model:** technical founder; no cold sales or paid research.  
 **Working market:** Pattaya–Sattahip–Rayong, Thailand.
-**Long-term ambition:** build a durable, profitable business. The $100k+/month net-profit ambition is a distant growth aspiration only; it must not drive near-term scope, spending, or risk.
 
-## Current strategic thesis
+## Business objective
 
-Start with a narrow operational problem for independent marine-experience operators: coordinating quote-led enquiries and confirmed trips across vessels, crew, equipment, add-ons, transfers, deposits, and departure-day information.
+Find a real, repeated customer problem and establish a sustainable, profitable business with minimal financial risk. The $100k+/month net-profit ambition is a distant growth aspiration only; it must not drive near-term scope, spending, or risk.
 
-Do **not** begin as a generic booking engine, CRM, channel manager, AI chatbot, or all-in-one hospitality suite. Existing platforms already cover much of generic booking. TourOps should only earn a place if discovery proves that a specific operator segment has a costly workflow gap that current tools and manual processes do not solve well.
+## Current product thesis
 
-The first sale may be a paid, partly manual workflow improvement. Productize only the repeated parts across multiple paying customers.
+Test whether independent marine-experience operators have a costly workflow gap between receiving an enquiry and delivering a confirmed trip: quote handling, resource coordination (vessels, crew, equipment, transfers), deposit visibility, and departure preparation.
 
-## Decision rules
+Do not assume this is a real market gap. Do not begin as a generic booking engine, CRM, channel manager, AI chatbot or all-in-one hospitality suite.
 
-1. Customer evidence outranks founder enthusiasm and feature ideas.
-2. A paid pilot is stronger evidence than compliments, survey interest, or a request for a free trial.
-3. No major build, hiring, debt, or expansion before repeated willingness to pay and successful use.
-4. Keep the initial delivery low-cost and reversible; preserve the user's stable technical-income path.
-5. Treat ODIN and QuestSide as possible sources of requirements or reusable components, not assumed shared products or codebases.
-6. Review the hypothesis weekly. Narrow, change, or stop when evidence requires it.
+## Founder operating model
+
+The founder remains focused on technical architecture and product decisions. The current $0 validation phase excludes paid researchers, contractors, agencies, advertising, subscriptions bought solely for research, cold outreach and founder-led sales calls.
+
+Use free desk research, a realistic clickable demo with synthetic data, and an organic inbound concept page / self-serve feedback route. Prepare assets and drafts; do not claim that anything has been published or that prospects have been contacted unless confirmed.
+
+A lack of inbound traffic is not proof that the problem does not exist. A request for information is not proof of willingness to pay. Only a paid pilot or equivalent commercial commitment confirms willingness to pay.
 
 ## Strategy documents
 
-- [Commercial strategy](commercial-strategy.md) — thesis, market wedge, risks and decision framework.
-- [ICP & customer discovery](icp-and-discovery.md) — ideal customer profile, buyer roles, interview guide and qualification.
-- [Competitive landscape](competitive-landscape.md) — direct software, substitutes and differentiation.
-- [MVP & roadmap](mvp-and-roadmap.md) — smallest paid outcome, boundaries and stage gates.
-- [Pricing & unit economics](pricing-and-unit-economics.md) — test prices and financial model.
-- [Go-to-market & first sales](go-to-market-and-sales.md) — outreach and paid-pilot motion.
-- [Initial prospect list](initial-prospect-list.md) — public, locally relevant candidate accounts; not confirmed leads.
-- [Validation scorecard](validation-scorecard.md) — evidence and metrics to record.
+- [Commercial strategy](commercial-strategy.md)
+- [Founder operating model](founder-operating-model.md)
+- [Zero-budget validation plan](zero-budget-validation-plan.md)
+- [ICP & customer discovery](icp-and-discovery.md)
+- [Competitive landscape](competitive-landscape.md)
+- [MVP & roadmap](mvp-and-roadmap.md)
+- [Pricing & unit economics](pricing-and-unit-economics.md)
+- [Go-to-market — inbound first](go-to-market-and-sales.md)
+- [Initial prospect list](initial-prospect-list.md)
+- [Validation scorecard](validation-scorecard.md)
 
 ## Current decision
 
-**Proceed to discovery, not full product development.** Interview 15–20 operators and attempt to sell 2–3 paid workflow pilots. The precise ICP and MVP remain provisional until those conversations reveal a repeated, expensive problem.
+**Do not build the full SaaS yet.** First prepare free market evidence and a demo that illustrates one workflow. Seek organic, self-selected interest. If genuine inbound interest appears, qualify it asynchronously. If commercial validation eventually requires human sales, defer that step until a revenue-share partner or another no-upfront-cost path is justified.
 
 ## Repository conventions
 
-- Keep commercial facts, hypotheses, decisions, and unknowns explicitly separated.
-- Date research and link primary sources.
-- Never label a company a lead, customer, design partner, or pilot until contact and status are confirmed.
-- Update the validation scorecard after each interview or sales conversation.
+- Separate facts, hypotheses, decisions and unknowns.
+- Date research and link sources.
+- Never label a company a lead, customer, design partner or pilot until the relevant action happened.
+- Never count website visits or likes as willingness to pay.
+- Update the validation scorecard only with verified activity.
