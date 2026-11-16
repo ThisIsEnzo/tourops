@@ -1,104 +1,93 @@
 # TourOps — Commercial Strategy
 
-**Status:** discovery hypothesis, not validated.  
-**Review date:** 2026-11-16
+**Status:** discovery hypothesis; not validated.  
+**Review date:** 2026-11-16  
+**Founder model:** technical founder; no direct sales in the current phase.  
+**Validation cash budget:** $0.
 
 ## 1. Business objective
 
-Build a small, cash-conscious B2B software business that earns its first revenue early, solves a recurring and valuable customer problem, and becomes sustainably profitable before pursuing aggressive scale.
+Find a repeated customer problem, earn the first revenue when a credible path becomes available, and build a sustainable, profitable business without unnecessary financial risk.
 
-The $100k+/month net-profit figure is a long-term ambition only. Near-term success means:
-- a clearly defined buyer and repeated problem;
-- customers willing to pay for a solution;
-- measurable operational or revenue improvement;
-- repeatable onboarding and support;
-- positive contribution margin and customer retention.
+The $100k+/month net-profit figure is a distant growth ambition only. It is not a near-term KPI, product-scope driver or reason to spend money. Early success means a narrow buyer segment, independent evidence of a recurring problem, inbound requests for a solution, and eventually a paid pilot with repeatable delivery economics.
 
-## 2. Initial market wedge
+## 2. Founder operating constraints
 
-**Provisional segment:** independent marine-experience operators in the Pattaya–Sattahip–Rayong area, especially operators handling private/quoted charters or multiple scheduled experiences with constrained physical resources.
+The founder chooses the technical founder role:
+- architecture, implementation decisions, technical quality and product feasibility;
+- review of research findings and key product decisions;
+- no cold calls, cold emails, sales meetings, persuasion or ongoing account management during the current phase.
 
-Examples of resources and workflow complexity:
-- multiple vessels or boats sourced from partner owners;
-- crew, captains, guides and instructors;
-- passenger capacity and safety constraints;
-- equipment, catering, transfers and add-ons;
-- date/time availability and weather-related changes;
-- deposits, balances, cancellations and partner commissions;
-- manifests, departure instructions and post-trip follow-up.
+Cash budget for validation is $0:
+- no paid market researcher or sales representative;
+- no ads, paid lead lists, agency, contractor or new paid SaaS subscriptions for this phase;
+- use existing tools and genuinely free tiers only, after checking current limits and commercial-use terms;
+- do not start a paid service just because a free trial is available.
 
-The hypothesis is that some operators coordinate these activities across chats, spreadsheets, booking tools and staff memory. This must be verified account by account. A polished website or visible WhatsApp button does not prove operational pain.
+ChatGPT can prepare analysis, documents, draft assets, product requirements, synthetic demo scenarios and research plans. It cannot truthfully claim to contact companies, conduct interviews, publish social posts or verify internal operator workflows unless those actions actually occur through an authorized tool or person.
 
-## 3. Job to be done
+## 3. Initial market wedge — provisional
 
-"When an enquiry becomes a potential booking, help my team quote accurately, confirm availability, collect the required payment, prepare the right people and resources, and deliver the trip without missed details or avoidable manual coordination."
+Independent marine-experience operators around Pattaya, Na Jomtien/Ocean Marina, Sattahip and Rayong that handle private/quoted charters or scheduled trips with multiple constrained resources.
 
-The first product should own one narrow workflow end-to-end, not every department of a hospitality business.
+Potential complexity includes vessels, partner boats, crew, captains, guides, instructors, equipment, transfers, add-ons, deposits, cancellations, passenger manifests and departure preparation.
 
-## 4. Possible initial value propositions to test
+The hypothesis is that some operators coordinate these steps across chats, spreadsheets, booking tools and staff memory. Public websites cannot prove that. We have not yet verified the workflow with an operator.
 
-Do not present all of these as established benefits. Test which one buyers care about most:
+## 4. Job to be tested
 
-1. **Faster quote-to-confirmation:** less back-and-forth to build and approve a quote.
-2. **Reliable resource availability:** fewer double bookings and fewer manual checks across boats, crew and equipment.
-3. **Departure readiness:** one operational run sheet with passenger count, pickup, add-ons, crew and special requests.
-4. **Deposit and balance visibility:** fewer forgotten payment follow-ups and less uncertainty about booking status.
-5. **Enquiry recovery:** structured follow-up for quotes that have not converted.
+"When an enquiry becomes a potential booking, help the team turn it into a correctly quoted, confirmed and operationally prepared trip, without missed details or unnecessary manual coordination."
 
-The strongest wedge is the one tied to a measurable cost, lost sale, operational failure or owner time—not the one with the most impressive demo.
+This is a discovery statement, not a validated value proposition.
 
-## 5. Product positioning
+## 5. What to test first
 
-Working description:
+Test three possible pain clusters independently:
+1. Quote-to-confirmation: enquiries, quote creation, follow-up and deposit status.
+2. Resource coordination: vessel, crew, equipment and transfer availability / assignment.
+3. Departure readiness: passenger details, pickup, special requests, add-ons and run sheet.
 
-> TourOps helps independent marine and activity operators turn enquiries into correctly prepared, paid and deliverable trips — coordinating availability, people, resources and customer details in one lightweight workflow.
+Do not assume all three belong in one MVP. The winner is the problem with the strongest evidence of frequency, impact and willingness to commit to a solution.
 
-Position as an **operations layer** only if interviews reveal that operators already have booking sources and need help coordinating fulfilment. If the core pain is actually booking acquisition, payments or channel distribution, reconsider the product boundary.
+## 6. Zero-budget validation strategy
 
-## 6. What TourOps is not initially
+1. Desk research: document public workflows, software already in use, public review themes and competitor positioning.
+2. Demo: create a realistic clickable prototype with synthetic data; label it as a concept, not live software.
+3. Inbound presence: prepare a simple public concept page and self-serve feedback route using a free hosting/form option only if its current terms and limits permit it. No paid campaign and no cold outreach.
+4. Content-led discovery: prepare useful, non-spammy material about charter operations that can attract operators organically. Publishing requires an authorized account and is not assumed done.
+5. Async qualification: use a short form to ask about operator type, tools, recent workflow friction, impact and interest in a pilot. Do not collect passenger/customer data.
+6. Decision gate: treat only repeated, specific operator responses and requests for a concrete evaluation as stronger problem evidence. A paid pilot remains the eventual commercial test.
+
+If inbound discovery does not generate responses, do not conclude the market has no pain; the channel may simply be too weak. At that point the choices are to park the idea, accept a small amount of founder-led discovery, or seek a revenue-share business-development partner. Do not silently break the founder's no-sales preference.
+
+## 7. Product positioning
+
+TourOps is exploring a lightweight operations workflow for independent marine and activity operators, connecting enquiry, booking, resource-planning and trip-readiness steps that teams may currently coordinate across multiple tools.
+
+Avoid promising integrations, automation, live availability or measurable savings until verified and built.
+
+## 8. What TourOps is not initially
 
 - A consumer travel marketplace.
 - A replacement for every OTA or channel manager.
-- A generic CRM for all small businesses.
-- A full property-management system.
+- A generic CRM for every small business.
+- A full PMS, ERP or accounting suite.
 - An AI chatbot sold on its own.
 - A payment processor or wallet.
-- A complex ERP or accounting system.
 - A custom website agency disguised as SaaS.
 
-## 7. Why start locally
+## 9. Pivot triggers
 
-Pattaya, Na Jomtien/Ocean Marina, Sattahip and nearby Rayong provide a practical geography for in-person discovery and fast feedback. Local proximity is a sales and learning advantage, not proof that the local market is large enough.
-
-Start with a local cluster, then test whether the same workflow repeats in Phuket, Samui or another market. Do not expand geography until product-market evidence exists.
-
-## 8. Strategic alternatives and pivot triggers
-
-| Evidence from discovery | Strategic response |
+| Evidence | Response |
 |---|---|
-| Operators already use a booking platform well but struggle after confirmation | Build a fulfilment/operations layer or integration, not a new booking engine |
-| Operators primarily lose leads due to slow replies and forgotten follow-up | Narrow to enquiry-to-deposit conversion for this vertical |
-| Small operators have low volume and will not pay a meaningful monthly fee | Test paid setup/service model or move upmarket |
-| High-end charter firms have bespoke processes and long procurement | Test smaller multi-boat or dive operators with faster owner-led buying |
-| Every operator's process is completely different | Stop SaaS build; consider a productized service or choose another segment |
-| Existing software already solves the costly problem and customers are satisfied | Do not build a clone; change the problem or segment |
+| Operators have a booking platform but post-booking fulfilment remains manual | Test an operations add-on |
+| Enquiries and follow-up are the dominant pain | Narrow to enquiry-to-deposit workflow |
+| Operators mainly need an OTA booking engine | Integrate/partner rather than clone |
+| Every operator's workflow is bespoke | Consider productized service only with a no-upfront-cost delivery path, otherwise park |
+| Public evidence shows mature incumbent tooling and no visible gap | Narrow research; do not build a clone |
+| Inbound page gets no traffic | Diagnose distribution; this alone is not product rejection |
+| Relevant operators visit/respond but do not request a workflow demo or pilot | Revisit pain, ICP and positioning |
 
-## 9. Capital and operating constraints
+## 10. Financial guardrails
 
-- Founder-led discovery and sales first.
-- Use existing technical skills; do not hire before recurring demand.
-- Use existing tools and manual operations where possible.
-- No debt, large ad spend, custom integrations or expensive infrastructure before paid validation.
-- Avoid handling card data or holding customer funds; use a suitable payment provider if/when payments become part of the product.
-- Keep security, access control, backups and data minimization in scope from the first pilot.
-
-## 10. 90-day validation target (not a forecast)
-
-- 15–20 completed discovery conversations.
-- 5+ qualified prospects with the same high-cost problem.
-- 2–3 paid pilots.
-- 1–2 pilots used in live operations for several weeks.
-- Evidence of time saved, fewer errors, faster response or improved conversion.
-- A credible path to repeatable onboarding and positive contribution margin.
-
-If these targets are missed, diagnose why and revise the hypothesis; do not inflate progress or continue building by inertia.
+No debt, paid ads, paid research or hiring in the $0 phase. No recurring software commitment without approval. No expensive integration or full SaaS build before evidence. Preserve the founder's separate income path. Track founder time even when cash cost is zero. Do not handle card details or hold customer funds in the prototype.
