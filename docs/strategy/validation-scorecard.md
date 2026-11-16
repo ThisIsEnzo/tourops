@@ -1,46 +1,53 @@
 # TourOps Validation Scorecard
 
-Use this file as the single lightweight evidence log. Update after each interview, pilot review and pricing test. Do not invent missing values.
+Use this file as the single evidence log. Update after each research cycle, inbound response, demo request or pilot. Do not invent missing values.
 
 ## 1. Current baseline — 2026-11-16
 
-| Metric | Current verified value |
+| Metric | Verified value |
 |---|---:|
 | Prospect candidates researched | 15 |
-| Prospects contacted | Unknown / not started |
+| Prospects contacted by TourOps | 0 confirmed |
 | Discovery interviews completed | 0 confirmed |
+| Inbound operator responses | 0 confirmed |
 | Qualified prospects | 0 confirmed |
-| Paid pilots offered | 0 confirmed |
+| Demo requests | 0 confirmed |
+| Pilot/pricing requests | 0 confirmed |
 | Paid pilots accepted | 0 confirmed |
 | Paying customers | 0 confirmed |
 | MRR | ฿0 confirmed |
 | Retained active customers | 0 confirmed |
-| Measured customer value | None yet |
-| Onboarding/support cost | Unknown |
+| Measured customer value | None |
+| Cash spent on validation | ฿0 confirmed |
+| Founder research/build time | Not tracked yet |
 
 Researching public companies does not count as outreach or a qualified lead.
 
-## 2. Interview log
+## 2. Evidence classification
 
-| Date | Company | Respondent / role | Segment | Workflow observed | Pain evidence | Quantified impact | Current tools | Buyer? | Willingness to pay | Next step |
-|---|---|---|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — | — | — | — |
+- **Public signal:** visible information on a website, product page, review or public discussion.
+- **Inbound signal:** an operator independently contacts TourOps or submits feedback.
+- **Problem evidence:** a specific recent example with frequency and impact.
+- **Commercial intent:** request for pricing, pilot scope or a concrete evaluation.
+- **Willingness to pay:** money paid or a binding commercial commitment.
 
-## 3. Pilot tracker
+Do not collapse these categories into one lead count.
 
-| Company | Scope | Price / currency | Paid? | Start/end | Success metric | Usage evidence | Outcome | Renewal / next step |
-|---|---|---:|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — | — |
+## 3. Inbound log
 
-## 4. Weekly funnel
+| Date | Source | Operator | Segment | Specific problem | Frequency / impact | Current tools | Demo requested? | Pricing / pilot intent | Next step |
+|---|---|---|---|---|---|---|---|---|---|
+| — | — | — | — | — | — | — | — | — | — |
 
-| Week starting | Accounts researched | Contacts sent | Replies | Interviews | Qualified | Proposals | Paid pilots | MRR |
+## 4. Organic funnel
+
+| Week starting | Content prepared | Content published | Page visits | Relevant responses | Demo requests | Pilot requests | Paid pilots | MRR |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 2026-11-16 | 15 | 0 | 0 | 0 | 0 | 0 | 0 | ฿0 |
+| 2026-11-16 | 0 | 0 | Unknown | 0 | 0 | 0 | 0 | ฿0 |
 
-Update only with actual activity. Distinguish researched accounts from contacted accounts.
+Track prepared and published separately. Unknown analytics remain unknown.
 
-## 5. Per-customer economics
+## 5. Per-customer economics (when pilots exist)
 
 | Customer | MRR | Setup revenue | Onboarding hours | Support hours/month | Direct software/API cost | Contribution | Retained? |
 |---|---:|---:|---:|---:|---:|---:|---|
@@ -48,31 +55,31 @@ Update only with actual activity. Distinguish researched accounts from contacted
 
 ## 6. Weekly decision
 
-**Decision:** not yet validated — conduct discovery and sell bounded pilots.
+**Current decision:** no production build yet; complete free desk research and synthetic demo.
 
-### Continue when
-- several independent buyers report the same costly workflow;
-- at least two buyers pay for a bounded pilot;
-- pilots are used in real operations;
-- value is measurable and exceeds price;
-- onboarding/support can be standardized.
+### Continue toward a narrow prototype when
+- multiple independent relevant operators describe the same recent problem;
+- the problem is recurring and specific;
+- at least two operators request a walkthrough or concrete evaluation;
+- the proposed workflow plausibly addresses the problem;
+- a path to a paid pilot exists without upfront spending.
 
-### Narrow or pivot when
-- pain exists but only in one subsegment;
-- booking acquisition, resource scheduling or departure readiness is the true dominant job;
-- the buyer wants an integration/managed service rather than a standalone SaaS.
+### Continue research but do not build when
+- evidence is interesting but generic;
+- visitors do not describe a specific problem;
+- inbound traffic is too low to judge;
+- the current ICP remains too broad.
 
-### Stop when
-- no recurring expensive pain emerges after sufficient interviews;
-- no qualified buyer will pay;
-- existing tools solve the problem adequately;
-- customer-specific customization prevents repeatability;
-- delivery economics remain negative.
+### Park or change the hypothesis when
+- evidence suggests no repeated problem;
+- incumbent tools solve the problem well;
+- every operator wants unrelated custom work;
+- no credible future path to revenue exists within the founder's chosen operating model.
 
 ## 7. Next actions
 
-1. Verify the top 10 prospect identities and best public business contact channels.
-2. Contact five prospects individually with a discovery request.
-3. Complete at least three workflow interviews.
-4. Record a specific recent failure/rework incident and estimate its cost.
-5. Do not finalize the MVP or commit to a full build until the evidence supports it.
+1. Complete public research profiles for the best-fit 10–15 candidates.
+2. Compare the three pain hypotheses and choose one demo workflow.
+3. Prepare a clickable demo with synthetic data.
+4. Prepare concept-page copy and an asynchronous feedback route.
+5. Publish only after technical review and explicit authorization.
