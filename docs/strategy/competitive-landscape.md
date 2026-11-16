@@ -1,7 +1,7 @@
 # Competitive Landscape
 
 **Research date:** 2026-11-16  
-**Scope:** public product positioning and local operator examples. Pricing and feature details can change; verify directly before quoting to a prospect.
+**Scope:** public product positioning and indicative pricing research. Vendor prices and regional terms change; confirm directly before quoting to a prospect.
 
 ## 1. Competitive categories
 
@@ -14,13 +14,34 @@
 | [Peek Pro](https://www.peekpro.com/) | Booking, payments and operator management | Validate vertical workflow depth and local fit before positioning |
 | [Xola](https://www.xola.com/) | Booking and sales tools for experience operators | Treat as an established alternative, not an empty market |
 | [LINE Official Account](https://www.linebiz.com/th/) | Customer messaging and business communication in Thailand | Messaging is a channel; TourOps should connect conversations to operational records |
-| [WhatsApp Business](https://business.whatsapp.com/) | Customer communication and business messaging | Same: do not replace chat; solve the workflow behind the conversation |
+| [WhatsApp Business](https://business.whatsapp.com/) | Customer communication and business messaging | Do not replace chat; solve the workflow behind the conversation |
 | Spreadsheets + shared calendars | Cheap, flexible and familiar | Often the strongest competitor; switch only when value clearly exceeds migration friction |
 | OTA / travel marketplaces | Demand generation and distribution | Not a direct product replacement; operators may need to reconcile OTA orders with direct sales |
 
-No exact feature parity or current tariff claims are made here. Confirm product plans, transaction fees, regional availability and contract terms with each vendor.
+## 2. Indicative competitor pricing (not a quote)
 
-## 2. Where a defensible wedge might exist
+Public vendor pricing is fragmented. Some vendors publish a subscription plus per-booking fees; others use quote-based or guest-facing fee models. An independent 2026 comparison checked vendor pages in September–October 2026 and reported the following headline ranges:
+
+| Platform | Indicative public model reported by comparison sources | Caveat |
+|---|---|---|
+| Bókun | Subscription tiers reported around US$49 / $149 / $499 per month, with booking fees varying by tier | Confirm current regional plan, booking-fee basis and payment fees with Bókun |
+| Rezdy | Plans reported around US$49 / $99 / $249 per month plus an online booking fee | Confirm direct vs OTA/offline booking treatment and current terms |
+| Checkfront | A published plan reported around US$99 per month plus an online booking fee | Confirm current plan and whether the fee is absorbed or passed through |
+| FareHarbor | No simple public subscription price; guest/booking fee model reported | Obtain an operator-specific quote and clarify who pays each fee |
+| Peek Pro | Quote-based pricing reported | Request a quote; do not infer cost from a third-party estimate |
+| Xola | Pricing/fees depend on the chosen payment/booking arrangement | Confirm contract and fee schedule directly |
+
+These figures are directional only and are not guaranteed current vendor offers. Reference comparisons: [Bókun's booking-system pricing guide](https://www.bokun.io/tour-and-activity-booking-system-pricing), [FleetDesk 2026 comparison](https://www.fleetdesk.co/tour-booking-software-pricing), and [Exploroff 2026 small-operator guide](https://exploroff.com/guide-resources/best-booking-software-for-small-tour-operators). Where third-party comparisons disagree, use the vendor's current written quote as source of truth. Payment processing, taxes, currency conversion, onboarding and contract terms may be additional.
+
+## 3. What this means for TourOps pricing
+
+- Do not try to win only by being cheaper than generic booking software.
+- Compare the total cost of the operator's current stack, including booking fees, staff time and manual work.
+- If the customer already uses Bókun/FareHarbor/Rezdy effectively, test an operations layer or integration rather than replacement.
+- If the buyer needs a full booking engine and OTA distribution, likely partner/integrate rather than rebuild.
+- A fixed subscription may be attractive for operational coordination, but willingness to pay must be demonstrated.
+
+## 4. Where a defensible wedge might exist
 
 Potential differentiation to test:
 - quote-led private charters and multi-resource planning;
@@ -32,25 +53,13 @@ Potential differentiation to test:
 
 These are hypotheses. Established vendors may already cover parts of them. The discovery question is whether the target segment experiences a gap that matters enough to pay for.
 
-## 3. Local market examples to interview or benchmark
+## 5. Local market examples to interview or benchmark
 
-The companies below are publicly visible operators or marine-experience businesses in the target region. They are **prospect candidates and research subjects, not confirmed leads, customers, or evidence of pain**. See [initial prospect list](initial-prospect-list.md) for public source links and fit hypotheses.
+Publicly visible operators in the target region include Pattaya Yacht Charters, We Charters Thailand, Serenity Yachting, Blue Voyage Thailand, Island Spirit / Sailing School Thailand, Sattahip Sailing Club, Real Divers Pattaya, Dive Station Pattaya, Mantaray Travel, Frog Man Snorkelling Service, Manta Marina, Once Yachting, SailBreeze and Ocean Yachting Pattaya.
 
-- Pattaya Yacht Charters
-- We Charters Thailand
-- Serenity Yachting
-- Blue Voyage Thailand
-- Island Spirit / Sailing School Thailand
-- Sattahip Sailing Club
-- Real Divers Pattaya
-- Dive Station Pattaya
-- Mantaray Travel / Samaesarn snorkeling
-- Frog Man Snorkelling Service
-- Manta Marina Pattaya
+They are **prospect candidates and research subjects, not confirmed leads, customers, or evidence of pain**. Public websites may show multiple vessels, custom trips, activities, deposits or crew coordination; that indicates potential operational complexity, not unmet software need. See [initial prospect list](initial-prospect-list.md).
 
-Public websites often show multi-vessel fleets, custom trips, multiple activities, deposits or crew coordination. That indicates operational complexity may exist, but it does not establish unmet software need.
-
-## 4. Competitive discovery questions
+## 6. Competitive discovery questions
 
 For every qualified prospect:
 1. Which system is the source of truth for availability?
@@ -62,17 +71,6 @@ For every qualified prospect:
 7. What would make them keep the current tool rather than switch?
 8. Would an operations add-on integrate with their existing booking platform, or must it replace it?
 
-## 5. Pricing research discipline
-
-Many vendors use quote-based pricing, transaction fees, payment processing fees or region-specific terms. Do not put an unverified number into a sales deck. Capture:
-- monthly subscription;
-- onboarding/setup;
-- booking/transaction fee;
-- payment processing;
-- minimum contract and cancellation;
-- taxes and currency;
-- included support and integrations.
-
-## 6. Strategic conclusion
+## 7. Strategic conclusion
 
 The market is not empty. TourOps must avoid building a generic clone. The strongest route is to find a narrow workflow not adequately served for a specific local operator profile, then integrate with existing tools where practical.
