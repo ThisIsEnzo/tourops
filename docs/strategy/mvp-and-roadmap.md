@@ -1,140 +1,66 @@
 # MVP & Validation Roadmap
 
-**Status:** proposed scope; do not treat as approved implementation scope until paid discovery validates it.  
-**Review date:** 2026-11-16
+**Status:** proposed; no production MVP approved.  
+**Review date:** 2026-11-16  
+**Validation cash budget:** $0.
 
 ## 1. MVP principle
 
-The first MVP is a **paid operational outcome**, not a broad software platform. It may combine lightweight software, configuration and manual founder support.
+The immediate deliverable is a concept demo, not a production SaaS MVP. Build only enough to communicate one workflow using synthetic data. No large backend or production architecture before evidence.
 
-Only build functionality required by at least two pilot customers with substantially the same workflow.
+The first product hypothesis remains enquiry / quote → availability check → confirmed booking → deposit status → resource assignment → departure run sheet. Discovery must determine which parts matter most.
 
-## 2. Candidate first workflow
+## 2. Demo scope (now)
 
-Enquiry / quote → availability check → confirmed booking → deposit status → resource assignment → departure manifest / run sheet → completion.
+- One fictional marine operator.
+- A small fictional fleet and crew roster.
+- Enquiry and quote status.
+- One or two booking examples.
+- Basic resource assignment.
+- Departure view / run sheet.
+- Deposit status shown as a manually entered state.
+- Clickable navigation and realistic edge cases.
 
-This is a candidate sequence, not yet proven to be the most painful workflow.
+Clearly mark all data and interactions as simulated. No real customers, payments, live availability or external messaging.
 
-## 3. Minimum product capabilities
+## 3. What to postpone
 
-### P0 — only if discovery confirms the workflow
-- Operator workspace with a small number of staff roles.
-- Customer and enquiry record with source and contact details.
-- Quote / booking record with status and notes.
-- Products/experiences and basic date/time slots.
-- Resource records (e.g. vessels) and capacity.
-- Manual assignment of vessel/resource and responsible staff.
-- Booking-level checklist / run sheet with passengers, pickup, add-ons and special requests.
-- Deposit and balance status tracking (recording status only; no custody of funds).
-- Basic search, filters and daily departure view.
-- CSV export and audit trail for important status changes.
-- Role-based access, backups and basic data retention controls.
+Until credible operator feedback: authentication and multi-tenancy; production database and customer-data migration; real-time availability and conflict resolution; LINE / WhatsApp APIs; payment gateway or deposits collection; OTA/channel integrations; customer-facing booking website; accounting, commissions and automated payouts; autonomous AI; native mobile apps; complex permissions and configurable workflows beyond what a pilot requires.
 
-### P1 — only after repeated pilot requests
-- Availability conflict warnings and resource calendars.
-- Quote templates and configurable terms.
-- Automated email or messaging notifications.
-- Agent / partner booking source and commission tracking.
-- Repeat-customer and post-trip follow-up.
-- Import/export from a proven incumbent platform.
-- Multi-language customer-facing templates.
+Before any live pilot, add appropriate security, access control, backup, audit, privacy and export controls.
 
-### Explicitly out of MVP
-- Full public booking website builder.
-- OTA/channel-manager distribution.
-- Payment gateway or stored card data.
-- Automated refunds or payouts.
-- AI autonomous sales agent.
-- Accounting, payroll or full ERP.
-- Dynamic pricing and revenue management.
-- Native mobile apps.
-- Complex multi-tenant customization before common workflows are known.
-- International expansion and extensive integrations.
+## 4. Stage-gated roadmap
 
-## 4. Manual-first pilot alternative
+### Stage 0 — free desk research (days 1–7)
+Exit: 10–15 operator profiles, dated sources, competitor map and three distinct pain hypotheses.
 
-Before building a full app, test the workflow with:
-- a shared structured booking register;
-- a resource calendar;
-- a standard quote and departure run-sheet template;
-- clear booking statuses and payment checklist;
-- a weekly review of missed follow-ups and operational errors.
+### Stage 1 — synthetic demo (days 8–14)
+Exit: one clickable concept walkthrough, a concept page draft and a short structured feedback path. Demo must not imply production capability.
 
-If a customer will pay for this service and uses it, automate the repeated bottleneck. If they will not pay for a manual outcome, a polished app is unlikely to fix the demand problem.
+### Stage 2 — organic inbound test (days 15–30)
+Exit target: substantive feedback from relevant operators and at least two independent requests for a walkthrough or evaluation. Low traffic means the distribution test is inconclusive, not that the problem is absent.
 
-## 5. Stage-gated roadmap
+### Stage 3 — limited prototype (only after green gate)
+Build only the repeated workflow that inbound evidence supports. Keep it reversible and low cost. Do not add production integrations without a specific pilot requirement and cost review.
 
-### Stage 0 — discovery (weeks 1–2)
-Exit criteria:
-- 15–20 interviews completed or a clear reason to narrow earlier;
-- one repeated workflow and buyer identified;
-- specific recent pain incidents documented;
-- at least 5 qualified accounts.
+### Stage 4 — paid pilot (requires a commercial path)
+A live pilot requires clear scope, consent, privacy/security safeguards, payment arrangements and a named operator contact. If the founder continues to avoid sales, first find a credible partner to handle commercial conversations under a no-upfront-cost arrangement.
 
-No major product build.
+### Stage 5 — repeatability
+Only after real paid use: standardize onboarding, support, pricing, reliability and customer retention. Expand to adjacent segments only when the same workflow repeats.
 
-### Stage 1 — paid concierge pilot (weeks 3–4)
-Exit criteria:
-- 2–3 paid pilots or deposits;
-- clear success metric per pilot;
-- named operational champion;
-- agreed access to anonymized/sample data and pilot boundaries.
+## 5. Metrics
 
-If no one pays, revisit ICP, pain, offer or pricing.
+Concept stage: relevant inbound operator responses; specificity and repetition of pain descriptions; demo requests; requests for pricing or pilot; traffic sources and conversion, if available.
 
-### Stage 2 — narrow MVP (weeks 5–8)
-Build only the repeated workflow used by pilot customers. Run live operations with founder-led onboarding. Measure weekly active use, data completeness, time saved and incidents avoided.
+Pilot stage: enquiry-to-quote time; quote-to-confirmation time; follow-up completion; resource conflicts; departure-day missing information; staff hours per booking; weekly active users and retained accounts; onboarding and support hours; contribution margin.
 
-### Stage 3 — repeatability (weeks 9–12)
-Exit criteria:
-- at least 5 paying customers or strong evidence of a repeatable sales path;
-- onboarding time and support cost understood;
-- at least 2 customers using the product repeatedly in live operations;
-- positive contribution margin on the chosen plan;
-- no critical reliability/security gaps.
+## 6. Security and data guardrails
 
-### Stage 4 — expansion
-Only after repeatability: add adjacent operator segments, integrations, self-serve onboarding, channel partners and regional expansion.
+Use synthetic data in public demos. Do not store real passenger/customer details at concept stage. Do not store raw card data or handle funds. Before a live pilot, assess Thai PDPA obligations, access controls, retention, backups, exports and incident handling. Do not promise accurate availability unless an authoritative source of truth exists.
 
-## 6. Success metrics
+## 7. Stop / pivot conditions
 
-Primary:
-- time from enquiry to quote;
-- time from quote to confirmation;
-- percentage of enquiries followed up;
-- resource conflicts / double bookings;
-- departure-day missing information;
-- staff hours spent per booking;
-- customer-reported financial/operational value;
-- weekly active operators and retained paid accounts.
+No repeated pain after relevant feedback; incumbent tools already solve the workflow; different operators require unrelated custom builds; no credible path to a paid pilot without expensive selling or delivery; or the technical-only founder model cannot be reconciled with the minimum human work needed to operate the business.
 
-Guardrails:
-- onboarding hours per customer;
-- support hours per customer per month;
-- failed or duplicated records;
-- data import errors;
-- churn and non-use;
-- contribution margin.
-
-Do not optimize vanity metrics such as number of features, total records or demo sign-ups.
-
-## 7. Technical principles (not an implementation specification)
-
-- Keep booking status and payment status distinct.
-- Preserve an audit history for critical operational changes.
-- Use explicit time zones and local trip dates.
-- Model capacity and resource allocation carefully; do not promise live availability until authoritative data is available.
-- Minimize stored personal data and restrict access by role.
-- Do not store raw payment card details.
-- Prefer provider-hosted checkout or manual payment reconciliation during pilots.
-- Make export and customer offboarding possible.
-
-## 8. Stop / pivot gates
-
-Stop or change the hypothesis if:
-- no repeated costly problem emerges after 15–20 relevant interviews;
-- fewer than 2 qualified buyers will pay for a bounded pilot;
-- each customer requires unrelated custom development;
-- the current software stack already solves the issue adequately;
-- the value cannot justify recurring price and support effort;
-- onboarding/support cost makes contribution margin structurally negative.
+In those cases, pause or narrow the project rather than continuing development by inertia.
