@@ -33,7 +33,8 @@ A lack of inbound traffic is not proof that the problem does not exist. A reques
 - [MVP & roadmap](mvp-and-roadmap.md)
 - [Pricing & unit economics](pricing-and-unit-economics.md)
 - [Go-to-market — inbound first](go-to-market-and-sales.md)
-- [Initial prospect list](initial-prospect-list.md)
+- [Initial prospect list — marine operator research](initial-prospect-list.md)
+- [Warm market access map — founder-reported introductions](warm-market-access-map.md)
 - [Validation scorecard](validation-scorecard.md)
 
 ## Current decision
