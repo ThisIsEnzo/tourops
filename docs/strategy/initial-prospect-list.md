@@ -1,8 +1,30 @@
 # Initial Prospect List — Pattaya, Sattahip & Nearby
 
-**Research date:** 2026-11-16  
+**Research date:** 2026-11-18  
 **Purpose:** candidate accounts for discovery and competitive learning.  
-**Important:** these are not confirmed leads, customers, design partners or evidence of pain. Public contact details and business operations should be rechecked before outreach. Fit ratings are hypotheses based on public descriptions only.
+**Important:** these are not confirmed leads, customers, design partners or evidence of pain. Public contact details and business operations should be rechecked before outreach. Fit ratings are hypotheses based on public descriptions or the founder's currently known introductions.
+
+## Warm-introduction opportunities
+
+These are private, founder-known access paths, not verified commercial opportunities. No business has agreed to an interview, pilot, purchase or data access. Keep personal names and private contact details out of this repository.
+
+| Priority | Candidate / access path | Known business context | Discovery value | Current qualification |
+|---|---|---|---|---|
+| A | Owner contact at a hotel group | A network of 22 hotels in Pattaya. | Potentially high-value discovery into multi-property operations: maintenance requests, housekeeping coordination, staff tasks, handovers and operational visibility. Could reveal whether one recurring workflow exists across multiple properties. | Warm access reportedly exists. Owner availability, willingness to discuss workflows, operational pain, buying authority and pilot interest are all unverified. Strongest potential commercial path, not a confirmed lead. |
+| B | Friend who owns a multi-activity farm / hospitality venue | One site combines a hotel, sauna, horse riding, ATV rides and a small bar. | Useful environment for exploring coordination across accommodation, activities, facilities, staff, schedules, equipment and safety checks. Particularly valuable for observing whether a shared operations workflow exists across different services. | Owner relationship exists. Level of day-to-day involvement, staff structure, systems, pain and willingness to pilot are unknown. |
+| C | Friend who owns Hops Brewhouse | Restaurant / brewhouse in Pattaya. | Focused restaurant discovery: shift handovers, opening/closing checklists, equipment maintenance, incidents, stock-related tasks and staff coordination. | Owner relationship exists. No interview, product interest or pilot commitment confirmed. |
+| D | Contact at a Pattaya excursions organizer | Organizes excursions and tourist activities in Pattaya; this is not being classified as a conventional travel agency. | Research into activity scheduling, group coordination, guides, transport, suppliers, booking changes and departure readiness. Could help understand the local tours-and-activities operating model. | Access path reportedly exists, but the contact is perceived as unlikely to pay for software. Treat as research-only unless clear willingness to pay emerges. Do not build free bespoke software or spend substantial time pursuing a sale. |
+
+### How to use warm introductions
+
+- Prefer a relaxed request to learn how the business currently operates; do not lead with a product pitch.
+- Ask about the last real example of a recurring operational problem, its frequency, consequences and current workaround.
+- Ask what tools and records are already used, and who owns the process.
+- Do not request confidential employee, guest, passenger, financial or booking data.
+- Do not assume that a personal relationship means permission to inspect systems, interview staff or run a pilot.
+- A conversation is discovery evidence, not proof of demand. A pilot requires explicit agreement; willingness to pay requires a commercial commitment.
+- The excursions contact may still provide useful market knowledge even if the likelihood of payment is low. Keep the conversation bounded and do not provide unpaid implementation.
+- Keep the current marine-experience hypothesis as the primary product hypothesis until evidence supports changing it. Hotel, restaurant and mixed-activity contacts are adjacent discovery samples, not automatic expansion of the ICP or roadmap.
 
 ## Priority A — closest to the initial marine-operations hypothesis
 
@@ -36,12 +58,14 @@
 
 ## Outreach order
 
-For first discovery, prioritize owner-led businesses where a short conversation is plausible and the workflow is complex enough to matter. Suggested first five:
+For the marine-first discovery track, prioritize owner-led businesses where a short conversation is plausible and the workflow is complex enough to matter. Suggested first five:
 1. We Charters Thailand
 2. Island Spirit / Sailing School Thailand
 3. Real Divers Pattaya
 4. Dive Station Pattaya
 5. One smaller private charter or snorkeling operator verified through local introductions
+
+Warm introductions should be used opportunistically and respectfully. The hotel group is the strongest potential commercial path; the mixed-activity farm may provide the richest cross-service operations observation; Hops Brewhouse is a focused restaurant comparison; the excursions organizer is research-only unless payment interest is demonstrated. These tracks do not override the marine-first thesis until discovery evidence is compared.
 
 Pattaya Yacht Charters, Blue Voyage, Serenity and Once Yachting are valuable benchmark/interview candidates but may have more established processes, larger fleets or longer buying cycles. Do not assume they are first-pilot targets.
 
