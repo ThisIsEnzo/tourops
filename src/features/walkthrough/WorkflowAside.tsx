@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Route } from '../../app/navigation';
 import { useDemoData } from '../../app/DemoDataProvider';
+import { Icon } from '../../components/ui/Icon';
 import { QuoteComposer } from './QuoteComposer';
 import { QuoteActions } from './QuoteActions';
 import { DepositForm } from './DepositForm';
@@ -22,7 +23,7 @@ export function WorkflowAside({ route, navigate }: { route: Route; navigate: (ne
         <div className="wf-aside__bar">
           <span>Interactive walkthrough</span>
           <button type="button" className="wf-ghost" onClick={() => { start(enquiry.id); navigate({ screen: 'walkthrough' }); }}>
-            Track this enquiry <Icon />
+            Track this enquiry <Icon name="arrow" size={13} />
           </button>
         </div>
         <QuoteComposer key={enquiry.id} enquiryId={enquiry.id} navigate={navigate} />
@@ -39,8 +40,4 @@ export function WorkflowAside({ route, navigate }: { route: Route; navigate: (ne
   }
 
   return null;
-}
-
-function Icon(): ReactNode {
-  return <span aria-hidden="true">→</span>;
 }

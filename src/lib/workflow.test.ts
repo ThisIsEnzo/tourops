@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { demoDataset } from '../data/demoDataset';
 import { validateDemoDataset } from '../data/validateDataset';
 import type { DemoDataset } from '../types/domain';
-import { findById, outstandingBalance } from './selectors';
+import { findById } from './selectors';
+import { outstandingBalance } from './money';
 import { nextSequence, nextSequences } from './ids';
 import * as workflow from './workflow';
 import type { WorkflowResult } from './workflow';
@@ -183,7 +184,14 @@ describe('deposit simulation', () => {
 
 describe('resource assignment', () => {
   it('assigns a valid resource and mirrors the vessel', () => {
-    const next = commit(workflow.assignResource(demoDataset, {
+    const pristine = workflow.cloneDataset(demoDataset);
+    const unassigned: DemoDataset = {
+      ...pristine,
+      assignments: pristine.assignments.filter(
+        (assignment) => !(assignment.departureId === 'demo-dep-003' && assignment.kind === 'vessel'),
+      ),
+    };
+    const next = commit(workflow.assignResource(unassigned, {
       departureId: 'demo-dep-003', kind: 'vessel', resourceId: 'demo-vsl-001',
     }));
     expect(findById(next.departures, 'demo-dep-003')?.vesselId).toBe('demo-vsl-001');

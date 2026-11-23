@@ -21,7 +21,10 @@ import { ResourceAssigner } from './ResourceAssigner';
 import { PreparationBoard } from './PreparationBoard';
 import { ReadinessPanel } from './ReadinessPanel';
 
-/** Persistent, non-modal entry point and progress strip. */
+/**
+ * Persistent, non-modal entry point and progress strip.
+ * This is the single canonical "Start scenario" control in the application.
+ */
 export function WalkthroughStrip({ route, navigate }: { route: Route; navigate: (next: Route) => void }): ReactNode {
   const { active, model, modified, start, reset } = useWalkthrough();
   const [confirming, setConfirming] = useState(false);
@@ -43,17 +46,18 @@ export function WalkthroughStrip({ route, navigate }: { route: Route; navigate: 
     );
   }
 
+  const current = model.current;
+
   return (
     <div className="wf-strip">
       <span className="wf-strip__label">
-        <Icon name="anchor" size={14} /> {model.completedCount}/{model.stages.length} · {model.current ? model.current.label : 'Complete'}
+        <Icon name="anchor" size={14} /> {model.completedCount}/{model.stages.length} · {current ? current.label : 'Complete'}
       </span>
-      <span className="wf-strip__text">{model.current ? model.current.summary : 'Departure is ready to sail.'}</span>
+      <span className="wf-strip__text">{current ? current.summary : 'Departure is ready to sail.'}</span>
       <div className="wf-strip__actions">
-        {model.current?.route && route.screen !== 'walkthrough' ? (
-          <button type="button" className="wf-primary wf-primary--sm"
-            onClick={() => navigate({ screen: 'walkthrough' })}>
-            Continue: {model.current.action}
+        {current && route.screen !== 'walkthrough' ? (
+          <button type="button" className="wf-primary wf-primary--sm" onClick={() => navigate({ screen: 'walkthrough' })}>
+            Continue: {current.action}
           </button>
         ) : null}
         {route.screen !== 'walkthrough' ? (
@@ -74,9 +78,14 @@ export function WalkthroughStrip({ route, navigate }: { route: Route; navigate: 
 
 export function WalkthroughScreen({ navigate }: ScreenProps): ReactNode {
   const { dataset } = useDemoData();
-  const { model, active, start, modified, reset } = useWalkthrough();
+  const { model, active, modified, reset } = useWalkthrough();
   const [confirming, setConfirming] = useState(false);
+
   const enquiry = model.enquiry;
+  const quote = model.quote;
+  const booking = model.booking;
+  const departure = model.departure;
+  const current = model.current;
 
   if (!enquiry) {
     return (
@@ -89,19 +98,18 @@ export function WalkthroughScreen({ navigate }: ScreenProps): ReactNode {
 
   const customer = enquiryCustomer(dataset, enquiry);
   const experience = enquiryExperience(dataset, enquiry);
+  const showSideReadiness = departure !== null && !model.isComplete && current?.key !== 'readiness';
 
   const stageBody = (): ReactNode => {
     if (model.isComplete) {
-      return <ReadinessPanel departureId={model.departure?.id ?? ''} />;
+      return departure ? <ReadinessPanel departureId={departure.id} /> : null;
     }
-    const key = model.current?.key;
-    if (key === 'enquiry') return <QuoteComposer key={enquiry.id} enquiryId={enquiry.id} navigate={navigate} />;
-    if (key === 'quote' && model.quote) return <QuoteActions quoteId={model.quote.id} navigate={navigate} />;
-    if (key === 'booking' && model.quote) return <QuoteActions quoteId={model.quote.id} navigate={navigate} />;
-    if (key === 'deposit' && model.booking) return <DepositForm bookingId={model.booking.id} />;
-    if (key === 'resources' && model.departure) return <ResourceAssigner departureId={model.departure.id} />;
-    if (key === 'preparation' && model.departure) return <PreparationBoard departureId={model.departure.id} />;
-    if (model.departure) return <ReadinessPanel departureId={model.departure.id} />;
+    if (current?.key === 'enquiry') return <QuoteComposer key={enquiry.id} enquiryId={enquiry.id} navigate={navigate} />;
+    if ((current?.key === 'quote' || current?.key === 'booking') && quote) return <QuoteActions quoteId={quote.id} navigate={navigate} />;
+    if (current?.key === 'deposit' && booking) return <DepositForm bookingId={booking.id} />;
+    if (current?.key === 'resources' && departure) return <ResourceAssigner departureId={departure.id} />;
+    if (current?.key === 'preparation' && departure) return <PreparationBoard departureId={departure.id} />;
+    if (departure) return <ReadinessPanel departureId={departure.id} />;
     return <Panel title="Next step"><EmptyState title="Continue the pipeline" hint="Accept the quote to create a booking and departure." /></Panel>;
   };
 
@@ -112,20 +120,19 @@ export function WalkthroughScreen({ navigate }: ScreenProps): ReactNode {
         subtitle="One fictional guest request, taken from enquiry to a departure that is ready to sail."
         crumbs={[{ label: 'Overview', onClick: () => navigate({ screen: 'dashboard' }) }, { label: 'Walkthrough' }]}
         badge={<Badge tone={model.isComplete ? 'positive' : 'info'}>{model.completedCount}/{model.stages.length} stages</Badge>}
-        actions={
+        actions={confirming ? (
           <>
-            {!active ? <button type="button" className="wf-primary" onClick={() => start(enquiry.id)}>Start scenario</button> : null}
-            {confirming ? (
-              <>
-                <button type="button" className="wf-danger" onClick={() => { reset(); setConfirming(false); }}>Confirm reset</button>
-                <button type="button" className="wf-ghost" onClick={() => setConfirming(false)}>Cancel</button>
-              </>
-            ) : (
-              <button type="button" className="wf-ghost" onClick={() => (modified ? setConfirming(true) : reset())}>Reset scenario</button>
-            )}
+            <button type="button" className="wf-danger" onClick={() => { reset(); setConfirming(false); }}>Confirm reset</button>
+            <button type="button" className="wf-ghost" onClick={() => setConfirming(false)}>Cancel</button>
           </>
-        }
+        ) : (
+          <button type="button" className="wf-ghost" onClick={() => (modified ? setConfirming(true) : reset())}>Reset scenario</button>
+        )}
       />
+
+      {!active ? (
+        <p className="wf-note"><Icon name="alert" size={13} /> Scenario not started yet — use “Start scenario” in the banner above. Every screen stays browsable meanwhile.</p>
+      ) : null}
 
       <Panel title="Scenario" description="Synthetic guest, synthetic vessel, simulated money">
         <div className="wf-scenario">
@@ -137,17 +144,16 @@ export function WalkthroughScreen({ navigate }: ScreenProps): ReactNode {
         </div>
         <div className="wf-actions">
           <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'enquiry', id: enquiry.id })}>Open enquiry</button>
-          {model.quote ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'quote', id: model.quote!.id })}>Open quote</button> : null}
-          {model.booking ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'booking', id: model.booking!.id })}>Open booking</button> : null}
-          {model.departure ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'departure', id: model.departure!.id })}>Open run sheet</button> : null}
+          {quote ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'quote', id: quote.id })}>Open quote</button> : null}
+          {booking ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'booking', id: booking.id })}>Open booking</button> : null}
+          {departure ? <button type="button" className="wf-ghost" onClick={() => navigate({ screen: 'departure', id: departure.id })}>Open run sheet</button> : null}
         </div>
       </Panel>
 
       <ol className="wf-rail">
         {model.stages.map((stage, index) => (
           <li key={stage.key} className={`wf-rail__step is-${stage.status}`}>
-            <button type="button" disabled={!stage.route}
-              onClick={() => { if (stage.route) navigate(stage.route); }}>
+            <button type="button" disabled={!stage.route} onClick={() => { if (stage.route) navigate(stage.route); }}>
               <span className="wf-rail__index">{stage.status === 'complete' ? <Icon name="check" size={12} /> : index + 1}</span>
               <span className="wf-rail__label">{stage.label}</span>
               <span className="wf-rail__status">{stage.status}</span>
@@ -156,15 +162,15 @@ export function WalkthroughScreen({ navigate }: ScreenProps): ReactNode {
         ))}
       </ol>
 
-      <div className="wf-current">
+      <section className="wf-current" aria-label="Current stage">
         <p className="wf-current__hint">
           <Icon name="arrow" size={14} />
-          {model.isComplete ? 'Scenario complete — every readiness requirement is satisfied.' : `${model.current?.label}: ${model.current?.summary}`}
+          {model.isComplete ? 'Scenario complete — every readiness requirement is satisfied.' : `${current?.label ?? ''}: ${current?.summary ?? ''}`}
         </p>
         {stageBody()}
-      </div>
+      </section>
 
-      {model.departure && !model.isComplete ? <ReadinessPanel departureId={model.departure.id} /> : null}
+      {showSideReadiness && departure ? <ReadinessPanel departureId={departure.id} /> : null}
     </div>
   );
 }
