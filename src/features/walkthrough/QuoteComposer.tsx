@@ -5,10 +5,9 @@ import type { Route } from '../../app/navigation';
 import { Panel } from '../../components/ui/Panel';
 import { Icon } from '../../components/ui/Icon';
 import { EmptyState } from '../../components/ui/EmptyState';
-import { formatMoney, percentOf, quoteSubtotal, quoteTotal, thb } from '../../lib/money';
-import type { QuoteLineItem } from '../../types/domain';
+import { formatMoney, fromMinor, percentOf, quoteSubtotal, quoteTotal } from '../../lib/money';
+import type { Quote, QuoteLineItem } from '../../types/domain';
 import type { QuoteLineInput, WorkflowResult } from '../../lib/workflow';
-import type { Quote } from '../../types/domain';
 import { WorkflowFeedback } from './WorkflowFeedback';
 
 interface EditableLine {
@@ -26,7 +25,7 @@ function toInput(line: EditableLine): QuoteLineInput {
   };
 }
 
-/** Quote creation surface. Every number is produced by the Stage A money utilities. */
+/** Quote creation surface. Every number is produced by the shared money utilities. */
 export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navigate: (route: Route) => void }): ReactNode {
   const { dataset, prepareQuoteFromEnquiry, createQuote } = useDemoData();
   const enquiry = dataset.enquiries.find((row) => row.id === enquiryId) ?? null;
@@ -47,13 +46,13 @@ export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navi
   const preview = useMemo(() => {
     const items: readonly QuoteLineItem[] = lines.map((line) => {
       const input = toInput(line);
-      return { id: String(line.key), label: input.label, quantity: input.quantity, unitPrice: thb(input.unitPriceMinor / 100) };
+      return { id: String(line.key), label: input.label, quantity: input.quantity, unitPrice: fromMinor(input.unitPriceMinor) };
     });
     const discountMinor = Math.round((Number.parseFloat(discountBaht) || 0) * 100);
-    const discount = discountMinor > 0 ? thb(discountMinor / 100) : null;
+    const discount = discountMinor > 0 ? fromMinor(discountMinor) : null;
     const subtotal = quoteSubtotal(items);
     const total = quoteTotal(items, discount);
-    return { items, discount, subtotal, total, deposit: percentOf(total, depositPercent) };
+    return { subtotal, discount, total, deposit: percentOf(total, depositPercent) };
   }, [lines, discountBaht, depositPercent]);
 
   if (!enquiry) {
@@ -117,7 +116,7 @@ export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navi
       </div>
 
       <button type="button" className="wf-ghost"
-        onClick={() => setLines((current) => [...current, { key: Date.now(), label: 'Additional service', quantity: '1', unitPriceBaht: '0' }])}>
+        onClick={() => setLines((current) => [...current, { key: current.length + 1000, label: 'Additional service', quantity: '1', unitPriceBaht: '0' }])}>
         <Icon name="arrow" size={13} /> Add line item
       </button>
 
@@ -145,7 +144,7 @@ export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navi
 
       <dl className="wf-totals">
         <div><dt>Subtotal</dt><dd className="mono">{formatMoney(preview.subtotal)}</dd></div>
-        <div><dt>Discount</dt><dd className="mono">{preview.discount ? `−${formatMoney(preview.discount)}` : formatMoney(thb(0))}</dd></div>
+        <div><dt>Discount</dt><dd className="mono">{preview.discount ? `−${formatMoney(preview.discount)}` : formatMoney(fromMinor(0))}</dd></div>
         <div className="is-grand"><dt>Total</dt><dd className="mono">{formatMoney(preview.total)}</dd></div>
         <div><dt>Required deposit</dt><dd className="mono">{formatMoney(preview.deposit)}</dd></div>
       </dl>
