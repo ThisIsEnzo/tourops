@@ -4,7 +4,7 @@
  * Rules enforced by `validateDemoDataset`:
  * 1. every entity id starts with `demo-`;
  * 2. every email uses a reserved example domain (RFC 2606);
- * 3. every phone number uses the fictional block below;
+ * 3. every phone number is a non-callable placeholder containing XXX;
  * 4. the dataset is flagged `synthetic: true`.
  *
  * Never import real operator, guest or passenger data into this folder.
@@ -13,8 +13,8 @@ import type { DemoMeta } from '../types/domain';
 
 export const DEMO_ID_PREFIX = 'demo-';
 export const DEMO_EMAIL_DOMAINS = ['example.com', 'example.org', 'example.net'] as const;
-/** Deliberately synthetic-looking block: +66 80 000 0xxx. Fictional. */
-export const DEMO_PHONE_PREFIX = '+66 80 000 0';
+/** Non-callable placeholder: the XXX segment cannot be dialled. Not a reserved real range. */
+export const DEMO_PHONE_PREFIX = '+66 80 XXX 0';
 
 export const DEMO_META: DemoMeta = {
   operatorName: 'Siam Blue Charters',

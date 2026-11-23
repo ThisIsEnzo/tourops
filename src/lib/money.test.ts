@@ -25,6 +25,13 @@ describe('money', () => {
     expect(formatMoney(thb(28000))).toBe('THB 28,000.00');
   });
 
+  it('normalises non-breaking spaces from Intl', () => {
+    const formatted = formatMoney(thb(1234567.89));
+    expect(formatted).toBe('THB 1,234,567.89');
+    expect(formatted).not.toMatch(/[\u00A0\u202F]/);
+    expect(formatMoney(thb(28000))).not.toMatch(/[\u00A0\u202F]/);
+  });
+
   it('computes the outstanding balance', () => {
     const payment: PaymentSummary = {
       status: 'partially_paid', total: thb(56100), depositRequired: thb(28050),

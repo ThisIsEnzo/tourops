@@ -73,7 +73,14 @@ const FORMATTER = new Intl.NumberFormat('en-GB', {
   maximumFractionDigits: 2,
 });
 
-/** Deterministic display string, e.g. `THB 28,000.00`. */
+/**
+ * Deterministic display string, e.g. `THB 28,000.00`.
+ * Intl can emit U+00A0 or U+202F as currency/grouping separators depending on
+ * the ICU build; normalise both to a plain space so Node, browsers and test
+ * snapshots all agree.
+ */
 export function formatMoney(amount: Money): string {
-  return FORMATTER.format(amount.amountMinor / SATANG_PER_BAHT);
+  return FORMATTER
+    .format(amount.amountMinor / SATANG_PER_BAHT)
+    .replace(/[\u00A0\u202F]/g, ' ');
 }

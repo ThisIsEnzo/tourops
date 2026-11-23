@@ -96,7 +96,7 @@ export function validateDemoDataset(dataset: DemoDataset): readonly DatasetIssue
 
   for (const person of [...dataset.customers, ...dataset.crew, ...dataset.guides]) {
     if (!person.phone.startsWith(DEMO_PHONE_PREFIX)) {
-      add('demo-phone', person.id, `phone must use the fictional block ${DEMO_PHONE_PREFIX}xxx`);
+      add('demo-phone', person.id, `phone must be a non-callable placeholder such as ${DEMO_PHONE_PREFIX}101`);
     }
   }
   for (const customer of dataset.customers) {

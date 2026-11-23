@@ -127,7 +127,7 @@ export interface Customer {
   readonly displayName: string;
   readonly contactName: string;
   readonly preferredChannel: EnquiryChannel;
-  /** Fictional number from the reserved demo block (see src/data/demoMeta.ts). */
+  /** Non-callable placeholder containing XXX (see src/data/demoMeta.ts). Never render as a tel: link. */
   readonly phone: string;
   /** Reserved example domain — never a real mailbox. */
   readonly email: string;
