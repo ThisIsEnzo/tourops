@@ -1,81 +1,78 @@
 # Zero-Budget Validation Plan
 
-**Duration:** first 30 days, then review.  
-**Cash budget:** $0. Founder role: technical only.  
-**No cold outreach, sales calls, paid researcher, contractor or advertising.**
+**Cash budget:** $0. No cold outreach, paid research, contractors, ads, or unsolicited sales calls.  
+**Founder preference:** technical/product role; discovery conversations only through an explicit, comfortable, permission-based route.  
+**Review date:** 2026-11-24.
 
 ## Objective
 
-Create credible evidence to decide whether TourOps deserves a narrow MVP build, while spending no cash and keeping the founder out of direct sales.
+Reduce uncertainty about whether a specific operator workflow is a frequent, consequential problem that existing tools/workarounds do not solve. This plan is intentionally slow and does not promise validation on a calendar.
 
-This plan can validate the clarity of the problem hypothesis and attract self-selected interest. It cannot guarantee demand or prove willingness to pay without commercial commitment.
+Public research and a synthetic demo can support a hypothesis; they cannot prove internal workflow pain or willingness to pay.
 
-## Phase 1 — free desk research (days 1–7)
+## Step 1 — Readiness, not a sprint
 
-- Review public websites and booking flows for candidate operators in the prospect list.
-- Note visible experience types, quote-led/private booking options, fleet/resources, staff/crew, add-ons, deposits, pickup and cancellation information.
-- Review public reviews for repeated operational friction, distinguishing guest complaints from operator workflow problems.
-- Review incumbent products and public documentation: Bókun, FareHarbor, Rezdy, Checkfront, Peek Pro, Xola, LINE and WhatsApp Business.
-- Record dated URLs and mark every inferred workflow as a hypothesis.
+- Keep the existing synthetic demo as-is; do not expand it.
+- Review the existing warm-access map and choose at most one introduction path that feels natural and low-pressure.
+- Prepare one short conversation guide and an evidence note template.
+- Public desk research should answer only questions that would change the interview focus.
 
-**Deliverables:** 10–15 concise operator profiles; competitor capability/pricing notes with source date; three pain hypotheses (quote-to-confirmation, resource coordination, departure readiness). No claims of customer validation.
+**Do not turn the current prospect list into a contact campaign.** No mass posting, scraping contacts, unsolicited DMs, or pressure on friends.
 
-## Phase 2 — concept and synthetic demo (days 8–14)
+## Step 2 — One discovery conversation
 
-- Create one fictional marine-operator scenario using synthetic data.
-- Build a polished clickable demo showing only the candidate workflow.
-- Prepare a one-page concept page explaining the problem being explored and who it is for.
-- Prepare a self-serve feedback form with short questions; do not request passenger/customer data or confidential screenshots.
-- Clearly label the concept as not yet a live booking system.
+If and only if the founder opts to make an introduction:
+- Ask about the operator's real process, not whether they like TourOps.
+- Start with one recent example: what happened, how often, who was involved, consequences, and what they use now.
+- Ask what they have tried, whether the issue is a priority, and who would decide to address it.
+- Ask permission before taking notes. Record only anonymized workflow details; do not collect customer, employee, payment, or confidential information.
 
-Demo boundaries: no live availability, payment processing, messaging integration or real customer data. Do not build authentication, multi-tenancy or backend infrastructure just to support a demo.
+The first conversation is exploratory. It is not a sales call, a product endorsement, a lead, or proof of demand.
 
-**Deliverables:** clickable demo; concept-page copy; feedback questionnaire; short demo script / screen-recording outline.
+## Step 3 — Review before doing more
 
-## Phase 3 — organic inbound test (days 15–30)
+After the first conversation, summarize:
+- the exact workflow and trigger;
+- a specific recent example;
+- frequency and impact (quantified only if the operator can support it);
+- current tools and workaround;
+- affected roles and decision-maker;
+- what contradicted our assumptions;
+- whether the operator asked for a follow-up or evaluation (only if they actually did).
 
-Prepare:
-- a lightweight public concept page on an existing domain or verified free hosting tier;
-- useful educational content such as a charter departure-readiness checklist, quote-to-trip workflow map or operator operations template;
-- relevant operator communities/directories where sharing research is explicitly permitted;
-- a simple email/form response path for operators who independently want to provide feedback.
+**Decision:** stop and reflect, ask a second operator only if the first evidence justifies it, or pause due to access constraints. No automatic next sprint.
 
-Rules: no mass posting, spam, scraping personal contacts or unsolicited DMs. Publishing requires an account and authorization; preparing a draft does not mean it has been published. No paid promotion. Do not treat likes, impressions or generic compliments as demand.
+## Step 4 — Replication (optional, evidence-dependent)
 
-### Asynchronous questions
+Seek one independent comparison through a natural introduction only if the first case shows a specific problem worth checking. Do not expand the sample to hit a quota. Compare workflow, frequency, impact, tools and context. Similar vocabulary alone is not replication.
 
-1. What type of marine/activity operation do you run?
-2. How do enquiries currently arrive?
-3. Which system is your source of truth for bookings and availability?
-4. Which step between enquiry and departure requires the most manual coordination?
-5. Describe one recent example and its impact (time, lost booking, error or customer issue).
-6. What have you tried already?
-7. Would you like to review a concept workflow or discuss a pilot if it addressed this issue?
+## Step 5 — Product experiment decision
 
-Do not collect passenger lists, payment information or confidential operational documents.
+A small, reversible prototype can be considered only if:
+- a repeated, specific problem has been described independently;
+- frequency and consequences are clear enough to justify solving;
+- current tools leave a meaningful gap;
+- a user and likely decision-maker are identifiable;
+- the operator explicitly agrees to evaluate a scoped prototype;
+- there is a feasible no-upfront-cost path and a later commercial discussion is acceptable.
 
-## First-30-day evidence targets
+This is a discretionary decision gate, not an automatic green light.
 
-Directional targets, not guaranteed outcomes:
-- 10–15 operator profiles researched;
-- 3 pain hypotheses documented with supporting public evidence;
-- one working synthetic demo;
-- one concept page and feedback route prepared;
-- 5 substantive inbound responses from relevant operators, if distribution reaches them;
-- 2 operators independently requesting a walkthrough or follow-up.
+## What counts as evidence
 
-If the page receives little traffic, record the distribution test as inconclusive. Do not interpret zero traffic as proof that the problem is absent.
+- **Public signal:** publicly visible information; may inspire hypotheses only.
+- **Access path:** a possible introduction, not an interview or lead.
+- **Inbound signal:** an operator independently requests information.
+- **Problem evidence:** specific recent example with frequency and consequence.
+- **Replication:** another independent operator describes substantially the same workflow/problem.
+- **Evaluation intent:** explicitly requests to test/review a prototype.
+- **Commercial intent:** asks about pricing/pilot scope or makes a concrete commitment.
+- **Willingness to pay:** paid commitment/payment—not likes or compliments.
 
-## Decision gate after 30 days
+## Inconclusive outcomes
 
-**Green — limited validation build:** at least 3 independent operators describe substantially the same workflow pain or 2 request a concrete evaluation; pain appears frequent and costly from specific examples; no incumbent product obviously solves it; the demo clarifies a narrow workflow. This permits a small, reversible prototype, not a full SaaS build.
+If no conversation happens, mark the validation as **blocked by access**, not as product failure. If a conversation is vague, mark evidence inconclusive. Do not infer that no traffic or no response means no market.
 
-**Yellow — continue research, no product build:** the problem seems plausible but inbound volume or specificity is weak. Improve the concept, distribution or target segment. Keep cash spend at zero.
+## Limits
 
-**Red — park or change:** public evidence and responses show no recurring problem, or the concept is a generic feature set already covered by existing tools.
-
-## What this plan cannot establish
-
-It cannot prove how operators work internally, establish willingness to pay from views/likes/form completions, or produce a paid pilot without a commercial conversation or self-serve purchase path. It cannot replace real customer conversations forever.
-
-If the zero-budget inbound test is inconclusive, choose explicitly: accept a very small amount of founder-led discovery, find a credible revenue-share commercial partner, or pause TourOps. Do not hide the trade-off.
+This approach cannot prove willingness to pay without a commercial commitment, and it cannot replace customer discovery indefinitely. If meaningful validation requires founder-led sales, choose that explicitly later, find a credible commercial partner, or pause TourOps. Do not quietly change the founder's constraints.
