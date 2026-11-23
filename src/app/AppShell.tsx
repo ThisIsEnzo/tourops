@@ -9,9 +9,10 @@ import { DemoDataBanner } from '../components/DemoDataBanner';
 import { GlobalSearch } from '../components/GlobalSearch';
 import { Icon } from '../components/ui/Icon';
 import type { IconName } from '../components/ui/Icon';
+import { WalkthroughStrip } from '../features/walkthrough/WalkthroughScreen';
 
 const NAV_ICON: Record<NavKey, IconName> = {
-  dashboard: 'overview', enquiries: 'enquiries', quotes: 'quotes',
+  dashboard: 'overview', walkthrough: 'arrow', enquiries: 'enquiries', quotes: 'quotes',
   bookings: 'bookings', departures: 'departures', resources: 'resources',
 };
 
@@ -26,7 +27,8 @@ export function AppShell({ route, navigate, children }: {
 
   useEffect(() => {
     setMenuOpen(false);
-    mainRef.current?.scrollTo({ top: 0 });
+    const node = mainRef.current;
+    if (node && typeof node.scrollTo === 'function') node.scrollTo({ top: 0 });
   }, [route]);
 
   useEffect(() => {
@@ -89,6 +91,7 @@ export function AppShell({ route, navigate, children }: {
         </header>
 
         <DemoDataBanner text={dataset.meta.disclaimer} />
+        <WalkthroughStrip route={route} navigate={navigate} />
 
         <main className="app-main" id="main" ref={mainRef} tabIndex={-1}>
           {children}

@@ -17,6 +17,9 @@ import { BookingDetailScreen } from '../features/bookings/BookingDetailScreen';
 import { DeparturesScreen } from '../features/departures/DeparturesScreen';
 import { DepartureDetailScreen } from '../features/departures/DepartureDetailScreen';
 import { ResourcesScreen } from '../features/resources/ResourcesScreen';
+import { WalkthroughProvider } from '../features/walkthrough/WalkthroughProvider';
+import { WalkthroughScreen } from '../features/walkthrough/WalkthroughScreen';
+import { WorkflowAside } from '../features/walkthrough/WorkflowAside';
 
 function MissingRecord({ route, navigate }: { route: Route; navigate: (next: Route) => void }): ReactNode {
   const { dataset } = useDemoData();
@@ -38,6 +41,7 @@ function MissingRecord({ route, navigate }: { route: Route; navigate: (next: Rou
 function screenFor(route: Route, navigate: (next: Route) => void): ReactNode {
   switch (route.screen) {
     case 'dashboard': return <DashboardScreen navigate={navigate} />;
+    case 'walkthrough': return <WalkthroughScreen navigate={navigate} />;
     case 'enquiries': return <EnquiriesScreen navigate={navigate} />;
     case 'enquiry': return <EnquiryDetailScreen id={route.id} navigate={navigate} />;
     case 'quotes': return <QuotesScreen navigate={navigate} />;
@@ -54,7 +58,8 @@ function Router(): ReactNode {
   const { route, navigate } = useNavigation();
   return (
     <AppShell route={route} navigate={navigate}>
-      {screenFor(route, navigate) ?? <MissingRecord route={route} navigate={navigate} />}
+      {screenFor(route, navigate)}
+      <WorkflowAside route={route} navigate={navigate} />
     </AppShell>
   );
 }
@@ -62,7 +67,9 @@ function Router(): ReactNode {
 export function App(): ReactNode {
   return (
     <DemoDataProvider>
-      <Router />
+      <WalkthroughProvider>
+        <Router />
+      </WalkthroughProvider>
     </DemoDataProvider>
   );
 }
