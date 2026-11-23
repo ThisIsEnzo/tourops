@@ -1,66 +1,75 @@
 # MVP & Validation Roadmap
 
 **Status:** proposed; no production MVP approved.  
-**Review date:** 2026-11-16  
+**Review date:** 2026-11-24  
 **Validation cash budget:** $0.
 
 ## 1. MVP principle
 
-The immediate deliverable is a concept demo, not a production SaaS MVP. Build only enough to communicate one workflow using synthetic data. No large backend or production architecture before evidence.
+The current deliverable is a concept demo, not a production SaaS MVP. The demo exists to communicate a workflow with synthetic data. It is not evidence that the workflow is a real pain point or that operators will pay for it.
 
-The first product hypothesis remains enquiry / quote → availability check → confirmed booking → deposit status → resource assignment → departure run sheet. Discovery must determine which parts matter most.
+The primary hypothesis remains enquiry / quote → booking confirmation → deposit visibility → resource assignment → departure readiness. The exact workflow and target operator are still unvalidated.
 
-## 2. Demo scope (now)
+## 2. Demo scope (existing; freeze unless evidence requires a change)
 
-- One fictional marine operator.
-- A small fictional fleet and crew roster.
+- One fictional marine operator and synthetic fleet/crew.
 - Enquiry and quote status.
-- One or two booking examples.
-- Basic resource assignment.
-- Departure view / run sheet.
-- Deposit status shown as a manually entered state.
-- Clickable navigation and realistic edge cases.
+- Booking examples, basic resource assignment and departure view.
+- Manually represented deposit status.
+- Clickable walkthrough and realistic examples.
 
-Clearly mark all data and interactions as simulated. No real customers, payments, live availability or external messaging.
+Clearly label all data and interactions as simulated. No real customers, payments, live availability or external messaging.
+
+**Development pause:** do not add features or polish the demo by default. Only make a small change if it fixes a demonstrated usability issue or materially improves an evidence-gathering test.
 
 ## 3. What to postpone
 
-Until credible operator feedback: authentication and multi-tenancy; production database and customer-data migration; real-time availability and conflict resolution; LINE / WhatsApp APIs; payment gateway or deposits collection; OTA/channel integrations; customer-facing booking website; accounting, commissions and automated payouts; autonomous AI; native mobile apps; complex permissions and configurable workflows beyond what a pilot requires.
+Until credible evidence: authentication and multi-tenancy; production database and customer-data migration; real-time availability and conflict resolution; LINE / WhatsApp APIs; payment gateway; OTA/channel integrations; customer-facing booking website; accounting, commissions and payouts; autonomous AI; native mobile apps; complex permissions or configurable workflows.
 
-Before any live pilot, add appropriate security, access control, backup, audit, privacy and export controls.
+Before any live pilot, assess and implement appropriate security, access control, backup, audit, privacy and export controls.
 
-## 4. Stage-gated roadmap
+## 4. Stage-gated roadmap (no artificial deadlines)
 
-### Stage 0 — free desk research (days 1–7)
-Exit: 10–15 operator profiles, dated sources, competitor map and three distinct pain hypotheses.
+### Stage A — Evidence readiness
+- Keep the evidence register and hypotheses small and explicit.
+- Finish only free desk research that can materially inform the next conversation.
+- Identify one warm, permission-based access path. Do not contact anyone without the founder's explicit decision.
 
-### Stage 1 — synthetic demo (days 8–14)
-Exit: one clickable concept walkthrough, a concept page draft and a short structured feedback path. Demo must not imply production capability.
+**Exit:** one realistic discovery opportunity is available, or the access constraint is clearly documented. No build required.
 
-### Stage 2 — organic inbound test (days 15–30)
-Exit target: substantive feedback from relevant operators and at least two independent requests for a walkthrough or evaluation. Low traffic means the distribution test is inconclusive, not that the problem is absent.
+### Stage B — First discovery cycle
+- Conduct one low-pressure conversation if the founder chooses to use a warm introduction.
+- Ask about their actual process and one recent problem; do not pitch TourOps first.
+- Record the situation, frequency, impact, current workaround and evidence confidence. Keep sensitive/private data out.
 
-### Stage 3 — limited prototype (only after green gate)
-Build only the repeated workflow that inbound evidence supports. Keep it reversible and low cost. Do not add production integrations without a specific pilot requirement and cost review.
+**Exit:** a concrete workflow and problem are understood—or the conversation provides no useful evidence. Either outcome is valid.
 
-### Stage 4 — paid pilot (requires a commercial path)
-A live pilot requires clear scope, consent, privacy/security safeguards, payment arrangements and a named operator contact. If the founder continues to avoid sales, first find a credible partner to handle commercial conversations under a no-upfront-cost arrangement.
+### Stage C — Replication check
+Only if the first conversation reveals a consequential, plausible problem, seek a second independent operator with a similar operation. Compare the underlying workflow, not just similar words.
 
-### Stage 5 — repeatability
-Only after real paid use: standardize onboarding, support, pricing, reliability and customer retention. Expand to adjacent segments only when the same workflow repeats.
+**Exit:** repeated problem evidence, contradiction, or inconclusive access. Do not force a green outcome.
+
+### Stage D — Narrow prototype decision
+A limited prototype may be considered only after repeated specific problem evidence, a clear current workaround/gap, a credible user and buyer, and a practical evaluation path. This is permission to plan a small experiment—not approval for full SaaS.
+
+### Stage E — Paid pilot
+A live pilot requires explicit operator agreement, scope, success measures, privacy/security safeguards, a realistic payment path and a named owner. No free bespoke build.
+
+### Stage F — Repeatability
+Only after real use and commercial evidence: standardize onboarding, support, pricing, reliability and retention. Expand segments only when the same workflow and value proposition repeat.
 
 ## 5. Metrics
 
-Concept stage: relevant inbound operator responses; specificity and repetition of pain descriptions; demo requests; requests for pricing or pilot; traffic sources and conversion, if available.
+Track evidence quality first: independent sources, specific recent examples, frequency, consequence, current workaround, decision-maker, evaluation request and commercial commitment.
 
-Pilot stage: enquiry-to-quote time; quote-to-confirmation time; follow-up completion; resource conflicts; departure-day missing information; staff hours per booking; weekly active users and retained accounts; onboarding and support hours; contribution margin.
+During a pilot, measure only agreed outcomes such as enquiry-to-quote time, quote-to-confirmation time, follow-up completion, resource conflicts, departure-day missing information, staff hours per booking, usage/retention, onboarding/support hours and contribution margin.
 
 ## 6. Security and data guardrails
 
-Use synthetic data in public demos. Do not store real passenger/customer details at concept stage. Do not store raw card data or handle funds. Before a live pilot, assess Thai PDPA obligations, access controls, retention, backups, exports and incident handling. Do not promise accurate availability unless an authoritative source of truth exists.
+Use synthetic data in public demos. Do not store real passenger/customer details during concept validation. Do not store raw card data or handle funds. Before a live pilot, assess Thai PDPA obligations, access controls, retention, backups, exports and incident handling. Do not promise accurate availability without an authoritative source of truth.
 
 ## 7. Stop / pivot conditions
 
-No repeated pain after relevant feedback; incumbent tools already solve the workflow; different operators require unrelated custom builds; no credible path to a paid pilot without expensive selling or delivery; or the technical-only founder model cannot be reconciled with the minimum human work needed to operate the business.
+Pause or narrow if relevant operators do not describe recurring consequential pain; existing tools adequately solve it; each operator needs unrelated custom work; no credible commercial path exists within the founder's chosen operating model; or progress depends on spending or selling activities the founder has not agreed to do.
 
-In those cases, pause or narrow the project rather than continuing development by inertia.
+**The next milestone is evidence, not another feature or a launch date.**
