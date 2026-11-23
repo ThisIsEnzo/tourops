@@ -1,8 +1,8 @@
 # TourOps — Commercial Strategy
 
 **Status:** hypothesis / zero-budget validation. Not a validated product plan.  
-**Last reviewed:** 2026-11-16  
-**Operating model:** technical founder; no cold sales or paid research.  
+**Last reviewed:** 2026-11-24  
+**Operating model:** technical founder; no cold outreach or sales calls unless explicitly reconsidered.  
 **Working market:** Pattaya–Sattahip–Rayong, Thailand.
 
 ## Business objective
@@ -11,17 +11,17 @@ Find a real, repeated customer problem and establish a sustainable, profitable b
 
 ## Current product thesis
 
-Test whether independent marine-experience operators have a costly workflow gap between receiving an enquiry and delivering a confirmed trip: quote handling, resource coordination (vessels, crew, equipment, transfers), deposit visibility, and departure preparation.
+Test whether independent marine-experience operators have a costly workflow gap in enquiry/quote handling, resource coordination (vessels, crew, equipment, transfers), deposit visibility, or departure preparation.
 
-Do not assume this is a real market gap. Do not begin as a generic booking engine, CRM, channel manager, AI chatbot or all-in-one hospitality suite.
+Do not assume this is a real market gap. Do not begin as a generic booking engine, CRM, channel manager, AI chatbot, or all-in-one hospitality suite.
 
 ## Founder operating model
 
-The founder remains focused on technical architecture and product decisions. The current $0 validation phase excludes paid researchers, contractors, agencies, advertising, subscriptions bought solely for research, cold outreach and founder-led sales calls.
+The founder remains focused on technical architecture and product decisions. The current $0 validation phase excludes paid researchers, contractors, agencies, advertising, subscriptions bought solely for research, cold outreach, unsolicited messages, and founder-led sales calls.
 
-Use free desk research, a realistic clickable demo with synthetic data, and an organic inbound concept page / self-serve feedback route. Prepare assets and drafts; do not claim that anything has been published or that prospects have been contacted unless confirmed.
+Warm introductions may be considered only when the founder explicitly chooses a comfortable, permission-based route. Access is not engagement or validation. Public research and synthetic demos create hypotheses, not proof of internal workflows or willingness to pay.
 
-A lack of inbound traffic is not proof that the problem does not exist. A request for information is not proof of willingness to pay. Only a paid pilot or equivalent commercial commitment confirms willingness to pay.
+No public publishing, production customer data, backend, or infrastructure without a separate explicit decision. A lack of inbound traffic is not proof that the problem does not exist. A request for information is not proof of willingness to pay.
 
 ## Strategy documents
 
@@ -35,16 +35,18 @@ A lack of inbound traffic is not proof that the problem does not exist. A reques
 - [Go-to-market — inbound first](go-to-market-and-sales.md)
 - [Initial prospect list — marine operator research](initial-prospect-list.md)
 - [Warm market access map — founder-reported introductions](warm-market-access-map.md)
-- [Validation scorecard](validation-scorecard.md)
+- [Validation scorecard — single activity summary](validation-scorecard.md)
+- [Validation workspace — evidence and discovery materials](../validation/README.md)
 
 ## Current decision
 
-**Do not build the full SaaS yet.** First prepare free market evidence and a demo that illustrates one workflow. Seek organic, self-selected interest. If genuine inbound interest appears, qualify it asynchronously. If commercial validation eventually requires human sales, defer that step until a revenue-share partner or another no-upfront-cost path is justified.
+**Do not build the full SaaS yet.** Feature development remains frozen by default. The next possible action is one permission-based exploratory conversation if the founder explicitly chooses it. Review the evidence before taking another step. If access is blocked or the founder does not want discovery conversations, record that constraint and pause rather than building more features.
 
 ## Repository conventions
 
-- Separate facts, hypotheses, decisions and unknowns.
+- Separate observed facts, vendor claims, operator statements, inferences, hypotheses, and unknowns.
 - Date research and link sources.
-- Never label a company a lead, customer, design partner or pilot until the relevant action happened.
-- Never count website visits or likes as willingness to pay.
-- Update the validation scorecard only with verified activity.
+- Never label a company a lead, customer, design partner, or pilot until the relevant action happened.
+- Never count website visits, likes, compliments, or access paths as willingness to pay.
+- Update the scorecard only with verified activity.
+- Keep private/customer data out of the repository; use anonymized session IDs.
