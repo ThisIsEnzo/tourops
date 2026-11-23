@@ -1,85 +1,94 @@
 # TourOps Validation Scorecard
 
-Use this file as the single evidence log. Update after each research cycle, inbound response, demo request or pilot. Do not invent missing values.
+**Baseline date:** 2026-11-24.  
+**Purpose:** single summary of confirmed validation activity. Detailed evidence belongs in the [validation workspace](../validation/README.md). Update only when an event is confirmed; never infer missing values.
 
-## 1. Current baseline — 2026-11-16
+## 1. Current baseline — 2026-11-24
 
 | Metric | Verified value |
 |---|---:|
-| Prospect candidates researched | 15 |
+| Research candidates | 15 (not leads) |
+| Reported warm access paths | 4 (none confirmed engaged) |
 | Prospects contacted by TourOps | 0 confirmed |
-| Discovery interviews completed | 0 confirmed |
+| Discovery conversations completed | 0 confirmed |
 | Inbound operator responses | 0 confirmed |
-| Qualified prospects | 0 confirmed |
-| Demo requests | 0 confirmed |
-| Pilot/pricing requests | 0 confirmed |
-| Paid pilots accepted | 0 confirmed |
-| Paying customers | 0 confirmed |
+| Specific problem evidence | 0 confirmed |
+| Replicated problem evidence | 0 confirmed |
+| Evaluation requests | 0 confirmed |
+| Pilot / pricing discussions | 0 confirmed |
+| Paid pilots / paying customers | 0 confirmed |
 | MRR | ฿0 confirmed |
-| Retained active customers | 0 confirmed |
 | Measured customer value | None |
 | Cash spent on validation | ฿0 confirmed |
-| Founder research/build time | Not tracked yet |
+| Founder time | Not tracked |
 
-Researching public companies does not count as outreach or a qualified lead.
+Research candidates and possible introductions are not leads, interviews, or validation. These are baseline facts as of the date above, not claims about later activity.
 
 ## 2. Evidence classification
 
-- **Public signal:** visible information on a website, product page, review or public discussion.
+- **Public signal:** visible information on a website, product page, review, or public discussion.
+- **Access path:** a possible introduction; no interaction is implied.
 - **Inbound signal:** an operator independently contacts TourOps or submits feedback.
-- **Problem evidence:** a specific recent example with frequency and impact.
-- **Commercial intent:** request for pricing, pilot scope or a concrete evaluation.
-- **Willingness to pay:** money paid or a binding commercial commitment.
+- **Problem evidence:** a specific recent example with frequency and consequence.
+- **Replication:** an independent operator describes a materially similar workflow and problem.
+- **Evaluation intent:** explicit request to test or review a scoped prototype.
+- **Commercial intent:** pricing, pilot scope, or concrete commercial discussion.
+- **Willingness to pay:** paid commitment or payment.
 
-Do not collapse these categories into one lead count.
+Do not collapse these categories into a single lead count. Definitions and examples live in the [evidence register](../validation/market-evidence-register.md).
 
-## 3. Inbound log
+## 3. Discovery log
 
-| Date | Source | Operator | Segment | Specific problem | Frequency / impact | Current tools | Demo requested? | Pricing / pilot intent | Next step |
-|---|---|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — | — | — |
+| Date | Anonymized session ID | Segment | Actual workflow | Recent example | Frequency / impact | Current workaround | Contradictions | Follow-up requested? |
+|---|---|---|---|---|---|---|---|---|
+| — | — | — | — | — | — | — | — | — |
 
-## 4. Organic funnel
+Do not put names, contact details, customer/passenger data, employee data, payment information, or confidential business records in this repository. Use the [operator feedback template](../validation/operator-feedback-template.md).
 
-| Week starting | Content prepared | Content published | Page visits | Relevant responses | Demo requests | Pilot requests | Paid pilots | MRR |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 2026-11-16 | 0 | 0 | Unknown | 0 | 0 | 0 | 0 | ฿0 |
+## 4. Organic / inbound tracking (only if explicitly published)
 
-Track prepared and published separately. Unknown analytics remain unknown.
+| Date/window | Asset prepared | Asset published? | Source | Visits | Relevant response | Demo/evaluation request | Commercial signal |
+|---|---|---|---|---|---|---|---|
+| — | — | No confirmed publication | — | Unknown | 0 confirmed | 0 confirmed | 0 confirmed |
 
-## 5. Per-customer economics (when pilots exist)
+Prepared and published are different states. Low or zero traffic is an inconclusive distribution result, not proof that a market or problem does not exist.
 
-| Customer | MRR | Setup revenue | Onboarding hours | Support hours/month | Direct software/API cost | Contribution | Retained? |
+## 5. Per-customer economics (only when real pilots exist)
+
+| Customer ID | MRR | Setup revenue | Onboarding hours | Support hours/month | Direct software/API cost | Contribution | Retained? |
 |---|---:|---:|---:|---:|---:|---:|---|
 | — | — | — | — | — | — | — | — |
 
-## 6. Weekly decision
+## 6. Current decision
 
-**Current decision:** no production build yet; complete free desk research and synthetic demo.
+**Decision as of 2026-11-24:** freeze feature development; keep the synthetic demo unchanged. The next possible action is for the founder to decide whether one warm introduction feels natural and permission-based. No conversation or validation is confirmed.
 
-### Continue toward a narrow prototype when
-- multiple independent relevant operators describe the same recent problem;
-- the problem is recurring and specific;
-- at least two operators request a walkthrough or concrete evaluation;
-- the proposed workflow plausibly addresses the problem;
-- a path to a paid pilot exists without upfront spending.
+### Continue discovery when
+- a specific recent problem is described;
+- frequency and consequences appear meaningful;
+- current tools/workarounds leave a plausible gap;
+- the operator is willing to clarify the workflow.
 
-### Continue research but do not build when
-- evidence is interesting but generic;
-- visitors do not describe a specific problem;
-- inbound traffic is too low to judge;
-- the current ICP remains too broad.
+### Consider proposing a narrow prototype only when
+- specific problem evidence repeats independently or has compelling corroboration;
+- the workflow, user, and likely buyer are narrow enough to understand;
+- current workarounds leave a meaningful gap;
+- a consenting operator has explicitly offered a practical evaluation opportunity;
+- the experiment can proceed without unapproved spend, data risk, or commitments.
 
-### Park or change the hypothesis when
-- evidence suggests no repeated problem;
-- incumbent tools solve the problem well;
-- every operator wants unrelated custom work;
-- no credible future path to revenue exists within the founder's chosen operating model.
+This is a discussion threshold, not an automatic green gate or authorization to build.
 
-## 7. Next actions
+### Pause / narrow / abandon when
+- evidence contradicts the problem thesis;
+- incumbent tools adequately solve the issue;
+- operators describe unrelated needs;
+- access is blocked and the founder does not wish to pursue discovery;
+- the next step requires spending, outreach, or commitments outside agreed constraints.
 
-1. Complete public research profiles for the best-fit 10–15 candidates.
-2. Compare the three pain hypotheses and choose one demo workflow.
-3. Prepare a clickable demo with synthetic data.
-4. Prepare concept-page copy and an asynchronous feedback route.
-5. Publish only after technical review and explicit authorization.
+## 7. Next action — one at a time
+
+1. Decide whether to use one reported warm access path for one exploratory conversation.
+2. If yes, prepare and conduct it with consent; then review evidence before deciding anything further.
+3. If no, record the access constraint and pause. Do not turn assumptions into a feature backlog.
+
+There are no interview quotas, deadlines, or automatic stage transitions.
