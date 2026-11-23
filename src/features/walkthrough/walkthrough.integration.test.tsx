@@ -19,7 +19,6 @@ describe('operations walkthrough journey', () => {
     expect(await screen.findByText('Suksai Family Group')).toBeTruthy();
 
     await createScenarioQuote(user);
-    expect(await screen.findByText(/created as a draft/i)).toBeTruthy();
 
     await acceptScenarioQuote(user);
     await convertScenarioQuote(user);

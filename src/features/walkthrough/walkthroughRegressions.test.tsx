@@ -39,7 +39,6 @@ describe('TO-01D walkthrough regressions', () => {
     render(<App />);
     await startWalkthrough(user);
     await createScenarioQuote(user);
-    expect(await screen.findByText(/created as a draft/i)).toBeTruthy();
 
     await resetScenario(user);
     expect(await screen.findByText('0/7 stages')).toBeTruthy();

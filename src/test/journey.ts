@@ -24,6 +24,9 @@ export async function currentStage(): Promise<HTMLElement> {
 export async function createScenarioQuote(user: JourneyUser): Promise<void> {
   const stage = await currentStage();
   await user.click(within(stage).getByRole('button', { name: 'Create quote' }));
+  // Creating the quote advances the stage and unmounts QuoteComposer; assert the
+  // next stage's action rather than transient feedback owned by the old component.
+  await screen.findByRole('button', { name: /Mark as sent/ });
 }
 
 export async function acceptScenarioQuote(user: JourneyUser): Promise<void> {
