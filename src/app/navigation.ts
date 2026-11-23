@@ -10,6 +10,7 @@ export const RESOURCE_TAB_LABEL: Record<ResourceTab, string> = {
 
 export type Route =
   | { readonly screen: 'dashboard' }
+  | { readonly screen: 'walkthrough' }
   | { readonly screen: 'enquiries' }
   | { readonly screen: 'enquiry'; readonly id: string }
   | { readonly screen: 'quotes' }
@@ -20,7 +21,7 @@ export type Route =
   | { readonly screen: 'departure'; readonly id: string }
   | { readonly screen: 'resources'; readonly tab: ResourceTab };
 
-export type NavKey = 'dashboard' | 'enquiries' | 'quotes' | 'bookings' | 'departures' | 'resources';
+export type NavKey = 'dashboard' | 'walkthrough' | 'enquiries' | 'quotes' | 'bookings' | 'departures' | 'resources';
 export type EntityKind = 'enquiry' | 'quote' | 'booking' | 'departure' | 'resource';
 
 export interface ScreenProps { readonly navigate: (route: Route) => void }
@@ -29,6 +30,7 @@ export interface NavItem { readonly key: NavKey; readonly label: string; readonl
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { key: 'dashboard', label: 'Overview', route: { screen: 'dashboard' } },
+  { key: 'walkthrough', label: 'Walkthrough', route: { screen: 'walkthrough' } },
   { key: 'enquiries', label: 'Enquiries', route: { screen: 'enquiries' } },
   { key: 'quotes', label: 'Quotes', route: { screen: 'quotes' } },
   { key: 'bookings', label: 'Bookings', route: { screen: 'bookings' } },
@@ -49,6 +51,7 @@ export function routeForEntity(entity: EntityKind, id: string): Route {
 export function routeToHash(route: Route): string {
   switch (route.screen) {
     case 'dashboard': return '#/overview';
+    case 'walkthrough': return '#/walkthrough';
     case 'enquiries': return '#/enquiries';
     case 'enquiry': return `#/enquiries/${encodeURIComponent(route.id)}`;
     case 'quotes': return '#/quotes';
@@ -67,6 +70,7 @@ export function parseRoute(hash: string): Route {
   const head = parts[0] ?? 'overview';
   const id = parts[1];
   switch (head) {
+    case 'walkthrough': return { screen: 'walkthrough' };
     case 'enquiries': return id ? { screen: 'enquiry', id } : { screen: 'enquiries' };
     case 'quotes': return id ? { screen: 'quote', id } : { screen: 'quotes' };
     case 'bookings': return id ? { screen: 'booking', id } : { screen: 'bookings' };
@@ -78,6 +82,7 @@ export function parseRoute(hash: string): Route {
 
 export function navKeyFor(route: Route): NavKey {
   switch (route.screen) {
+    case 'walkthrough': return 'walkthrough';
     case 'enquiry':
     case 'enquiries': return 'enquiries';
     case 'quote':
@@ -97,6 +102,7 @@ export function crumbsFor(route: Route, dataset: DemoDataset): readonly Crumb[] 
   const home: Crumb = { label: 'Overview', route: { screen: 'dashboard' } };
   switch (route.screen) {
     case 'dashboard': return [{ label: 'Overview', route: null }];
+    case 'walkthrough': return [home, { label: 'Walkthrough', route: null }];
     case 'enquiries': return [home, { label: 'Enquiries', route: null }];
     case 'quotes': return [home, { label: 'Quotes', route: null }];
     case 'bookings': return [home, { label: 'Bookings', route: null }];
