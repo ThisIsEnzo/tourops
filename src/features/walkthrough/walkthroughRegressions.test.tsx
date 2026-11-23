@@ -3,8 +3,8 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { App } from '../../app/App';
 import {
-  acceptScenarioQuote, assignScenarioResources, completeMandatoryChecklist, convertScenarioQuote,
-  createScenarioQuote, journeyUser, recordScenarioDeposit, resetScenario, startWalkthrough,
+  assignScenarioResources, completeMandatoryChecklist, journeyUser, recordScenarioDeposit,
+  resetScenario, startWalkthrough, createScenarioQuote, acceptScenarioQuote, convertScenarioQuote,
 } from '../../test/journey';
 
 describe('TO-01D walkthrough regressions', () => {

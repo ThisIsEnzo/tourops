@@ -19,14 +19,10 @@ describe('operations walkthrough journey', () => {
     expect(await screen.findByText('Suksai Family Group')).toBeTruthy();
 
     await createScenarioQuote(user);
-
     await acceptScenarioQuote(user);
     await convertScenarioQuote(user);
-    expect(await screen.findByText(/and departure/i)).toBeTruthy();
 
     await recordScenarioDeposit(user);
-    expect(await screen.findByText(/Simulated payment recorded/i)).toBeTruthy();
-
     await assignScenarioResources(user);
     await completeMandatoryChecklist(user);
 

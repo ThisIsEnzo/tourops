@@ -24,8 +24,7 @@ export async function currentStage(): Promise<HTMLElement> {
 export async function createScenarioQuote(user: JourneyUser): Promise<void> {
   const stage = await currentStage();
   await user.click(within(stage).getByRole('button', { name: 'Create quote' }));
-  // Creating the quote advances the stage and unmounts QuoteComposer; assert the
-  // next stage's action rather than transient feedback owned by the old component.
+  // The successful action advances the model and unmounts QuoteComposer.
   await screen.findByRole('button', { name: /Mark as sent/ });
 }
 
@@ -39,12 +38,16 @@ export async function acceptScenarioQuote(user: JourneyUser): Promise<void> {
 export async function convertScenarioQuote(user: JourneyUser): Promise<void> {
   const stage = await currentStage();
   await user.click(within(stage).getByRole('button', { name: /Convert to booking/ }));
+  // Conversion advances to the deposit stage.
+  await screen.findByRole('button', { name: 'Fill deposit due' });
 }
 
 export async function recordScenarioDeposit(user: JourneyUser): Promise<void> {
   const stage = await currentStage();
   await user.click(within(stage).getByRole('button', { name: 'Fill deposit due' }));
   await user.click(within(stage).getByRole('button', { name: /Record simulated payment/ }));
+  // The deposit stage unmounts after the required deposit is recorded.
+  await screen.findByRole('button', { name: /Assign resource/ });
 }
 
 export async function assignScenarioResources(user: JourneyUser): Promise<void> {
