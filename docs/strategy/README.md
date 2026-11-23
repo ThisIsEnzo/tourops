@@ -28,6 +28,7 @@ No public publishing, production customer data, backend, or infrastructure witho
 - [Commercial strategy](commercial-strategy.md)
 - [Founder operating model](founder-operating-model.md)
 - [Zero-budget validation plan](zero-budget-validation-plan.md)
+- [Validation reset decision](validation-reset.md)
 - [ICP & customer discovery](icp-and-discovery.md)
 - [Competitive landscape](competitive-landscape.md)
 - [MVP & roadmap](mvp-and-roadmap.md)
