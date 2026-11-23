@@ -13,6 +13,7 @@ import { vessels } from './fleet';
 import { crew, guides } from './crew';
 import { equipment } from './equipment';
 import { assignments, checklist, departures } from './operations';
+import { payments } from './payments';
 
 /** Fresh envelope each call: the state container re-seeds with this factory. */
 export function createDemoDataset(): DemoDataset {
@@ -30,6 +31,7 @@ export function createDemoDataset(): DemoDataset {
     departures,
     assignments,
     checklist,
+    payments,
   };
 }
 

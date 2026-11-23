@@ -1,11 +1,15 @@
 /**
  * Runtime integrity checks for the synthetic dataset: referential integrity,
- * quote arithmetic, payment coherence, capacity limits, resource availability
- * and the demo-data conventions. Used by the foundation screen and unit tests.
- * It is a safety net for the demo, not a business-rules engine.
+ * quote arithmetic, payment coherence, ledger reconciliation, capacity limits,
+ * resource availability and the demo-data conventions.
+ *
+ * TO-01C-A changes:
+ * - `partially_paid` now means `0 < received < total` so a partially paid
+ *   deposit is representable (previously it required received > deposit);
+ * - the append-only payment ledger is validated and reconciled with summaries.
  */
 import type { DemoDataset, PaymentSummary, ResourceKind } from '../types/domain';
-import { amountReceived, quoteTotal } from '../lib/money';
+import { amountReceived, quoteTotal, sumMoney } from '../lib/money';
 import { findById, partySize } from '../lib/selectors';
 import { DEMO_EMAIL_DOMAINS, DEMO_ID_PREFIX, DEMO_PHONE_PREFIX } from './demoMeta';
 
@@ -36,8 +40,8 @@ function checkPayment(entity: string, payment: PaymentSummary, add: AddIssue): v
       }
       break;
     case 'partially_paid':
-      if (received <= deposit || received >= total) {
-        add('payment-status', entity, 'partially_paid must sit between the deposit and the total');
+      if (received <= 0 || received >= total) {
+        add('payment-status', entity, 'partially_paid must be between zero and the total');
       }
       break;
     case 'paid_in_full':
@@ -65,6 +69,7 @@ export function validateDemoDataset(dataset: DemoDataset): readonly DatasetIssue
     departures: dataset.departures,
     assignments: dataset.assignments,
     checklist: dataset.checklist,
+    payments: dataset.payments,
   };
   type CollectionName = keyof typeof collections;
 
@@ -137,6 +142,14 @@ export function validateDemoDataset(dataset: DemoDataset): readonly DatasetIssue
     }
   }
 
+  const submissions = new Set<string>();
+  for (const entry of dataset.payments) {
+    ref(entry.bookingId, 'bookings', entry.id, 'bookingId');
+    if (entry.amount.amountMinor <= 0) add('payment-amount', entry.id, 'ledger amounts must be positive');
+    if (submissions.has(entry.submissionId)) add('duplicate-submission', entry.id, 'submission id reused');
+    submissions.add(entry.submissionId);
+  }
+
   for (const booking of dataset.bookings) {
     ref(booking.customerId, 'customers', booking.id, 'customerId');
     ref(booking.experienceId, 'experiences', booking.id, 'experienceId');
@@ -144,6 +157,15 @@ export function validateDemoDataset(dataset: DemoDataset): readonly DatasetIssue
     ref(booking.quoteId, 'quotes', booking.id, 'quoteId');
     ref(booking.departureId, 'departures', booking.id, 'departureId');
     checkPayment(booking.id, booking.payment, add);
+
+    const ledger = sumMoney(dataset.payments.filter((entry) => entry.bookingId === booking.id).map((entry) => entry.amount));
+    const received = amountReceived(booking.payment).amountMinor;
+    if (ledger.amountMinor !== received) {
+      add('payment-ledger-mismatch', booking.id, 'ledger total does not match the payment summary');
+    }
+    if (booking.payment.depositReceived.amountMinor !== Math.min(received, booking.payment.depositRequired.amountMinor)) {
+      add('payment-allocation', booking.id, 'deposit allocation must fill the deposit first');
+    }
     if (booking.status === 'confirmed' && booking.confirmedAt === null) {
       add('booking-confirmation', booking.id, 'a confirmed booking needs a confirmation timestamp');
     }

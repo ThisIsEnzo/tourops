@@ -1,18 +1,18 @@
 /**
- * TourOps — concept demo domain model (TO-01A foundation).
+ * TourOps — concept demo domain model.
  *
  * Types only: no workflow logic, no UI, no persistence. The model describes a
- * FICTIONAL operator ("Siam Blue Charters") and supports one candidate workflow:
+ * FICTIONAL operator ("Siam Blue Charters") and supports the workflow:
  *
  *   pending enquiry -> quote -> confirmed booking -> resource assignment
  *   -> deposit update -> departure run sheet -> checklist completion
  *
- * The workflow itself is intentionally NOT implemented here (TO-01B screens,
- * TO-01C interactions).
- *
  * Conventions: money is an integer number of satang; dates are ISO strings;
- * times are 24h local strings in Asia/Bangkok; entities are readonly so future
- * state updates must produce new objects. No card data, no real personal data.
+ * times are 24h local strings in Asia/Bangkok; entities are readonly so state
+ * updates must produce new objects. No card data, no real personal data.
+ *
+ * TO-01C-A adds an append-only payment ledger (`PaymentEntry`, `DemoDataset.payments`)
+ * so simulated deposits are idempotent and payment summaries are derivable.
  */
 
 /* Primitives -------------------------------------------------------- */
@@ -44,6 +44,7 @@ export type EquipmentId = string;
 export type DepartureId = string;
 export type AssignmentId = string;
 export type ChecklistItemId = string;
+export type PaymentEntryId = string;
 
 export type Language = 'en' | 'th' | 'ru' | 'zh' | 'de' | 'fr';
 
@@ -105,6 +106,23 @@ export interface PaymentSummary {
   readonly balanceDueOn: IsoDate | null;
   readonly method: PaymentMethod | null;
   readonly lastUpdatedAt: IsoDateTime | null;
+  readonly note?: string;
+}
+
+/**
+ * Append-only simulated bookkeeping entry (TO-01C-A).
+ * `submissionId` is an idempotency key: replaying it must never double-charge.
+ */
+export type PaymentEntryKind = 'deposit' | 'balance';
+
+export interface PaymentEntry {
+  readonly id: PaymentEntryId;
+  readonly bookingId: BookingId;
+  readonly kind: PaymentEntryKind;
+  readonly amount: Money;
+  readonly method: PaymentMethod;
+  readonly recordedAt: IsoDateTime;
+  readonly submissionId: string;
   readonly note?: string;
 }
 
@@ -318,4 +336,6 @@ export interface DemoDataset {
   readonly departures: readonly Departure[];
   readonly assignments: readonly ResourceAssignment[];
   readonly checklist: readonly ChecklistItem[];
+  /** Simulated bookkeeping ledger (TO-01C-A). Append-only. */
+  readonly payments: readonly PaymentEntry[];
 }
