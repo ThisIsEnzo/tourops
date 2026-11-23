@@ -29,7 +29,7 @@ function toInput(line: EditableLine): QuoteLineInput {
 export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navigate: (route: Route) => void }): ReactNode {
   const { dataset, prepareQuoteFromEnquiry, createQuote } = useDemoData();
   const enquiry = dataset.enquiries.find((row) => row.id === enquiryId) ?? null;
-  const [seed] = useState(() => prepareQuoteFromEnquiry(dataset, enquiryId));
+  const [seed] = useState(() => prepareQuoteFromEnquiry(enquiryId));
   const [lines, setLines] = useState<readonly EditableLine[]>(() =>
     seed.ok
       ? seed.value.lineItems.map((line, index) => ({
