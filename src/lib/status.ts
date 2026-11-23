@@ -72,3 +72,42 @@ export const VESSEL_STATUS: Record<VesselStatus, StatusPresentation> = {
   maintenance: { label: 'Maintenance', tone: 'attention' },
   inactive: { label: 'Inactive', tone: 'muted' },
 };
+
+
+/* TO-01B additions: presentation labels for the operations screens. */
+import type {
+  ChecklistCategory, EnquiryChannel, EquipmentCondition, Language, ResourceKind, RosterStatus, VesselKind,
+} from '../types/domain';
+
+export const ROSTER_STATUS: Record<RosterStatus, StatusPresentation> = {
+  active: { label: 'Active', tone: 'positive' },
+  on_leave: { label: 'On leave', tone: 'attention' },
+  contractor: { label: 'Contractor', tone: 'info' },
+};
+
+export const EQUIPMENT_CONDITION: Record<EquipmentCondition, StatusPresentation> = {
+  good: { label: 'Good', tone: 'positive' },
+  service_due: { label: 'Service due', tone: 'attention' },
+  out_of_service: { label: 'Out of service', tone: 'critical' },
+};
+
+export const CHANNEL_LABEL: Record<EnquiryChannel, string> = {
+  line: 'LINE', whatsapp: 'WhatsApp', email: 'Email', phone: 'Phone',
+  website: 'Website', agent: 'Agent', walk_in: 'Walk-in',
+};
+
+export const VESSEL_KIND_LABEL: Record<VesselKind, string> = {
+  motor_yacht: 'Motor yacht', catamaran: 'Catamaran', sailing_yacht: 'Sailing yacht', speedboat: 'Speedboat',
+};
+
+export const RESOURCE_KIND_LABEL: Record<ResourceKind, string> = {
+  vessel: 'Vessel', crew: 'Crew', guide: 'Guide', equipment: 'Equipment', transfer: 'Transfer',
+};
+
+export const CHECKLIST_CATEGORY_LABEL: Record<ChecklistCategory, string> = {
+  guest: 'Guest', safety: 'Safety', provisioning: 'Provisioning', crew: 'Crew', documents: 'Documents',
+};
+
+export const LANGUAGE_LABEL: Record<Language, string> = {
+  en: 'English', th: 'Thai', ru: 'Russian', zh: 'Mandarin', de: 'German', fr: 'French',
+};

@@ -1,49 +1,68 @@
+import type { ReactNode } from 'react';
 import { DemoDataProvider, useDemoData } from './DemoDataProvider';
-import { DemoDataBanner } from '../components/DemoDataBanner';
-import { FoundationOverview } from '../features/foundation/FoundationOverview';
-import { formatDate } from '../lib/datetime';
+import { AppShell } from './AppShell';
+import { useNavigation } from './useNavigation';
+import type { Route } from './navigation';
+import { crumbsFor } from './navigation';
+import { PageHeader } from '../components/ui/PageHeader';
+import { EmptyState } from '../components/ui/EmptyState';
+import { Panel } from '../components/ui/Panel';
+import { DashboardScreen } from '../features/dashboard/DashboardScreen';
+import { EnquiriesScreen } from '../features/enquiries/EnquiriesScreen';
+import { EnquiryDetailScreen } from '../features/enquiries/EnquiryDetailScreen';
+import { QuotesScreen } from '../features/quotes/QuotesScreen';
+import { QuoteDetailScreen } from '../features/quotes/QuoteDetailScreen';
+import { BookingsScreen } from '../features/bookings/BookingsScreen';
+import { BookingDetailScreen } from '../features/bookings/BookingDetailScreen';
+import { DeparturesScreen } from '../features/departures/DeparturesScreen';
+import { DepartureDetailScreen } from '../features/departures/DepartureDetailScreen';
+import { ResourcesScreen } from '../features/resources/ResourcesScreen';
 
-/**
- * TO-01A shell. Product screens (dashboard, enquiries, resources, operations)
- * arrive in TO-01B; this stage only proves the foundation is wired together.
- */
-function Shell() {
+function MissingRecord({ route, navigate }: { route: Route; navigate: (next: Route) => void }): ReactNode {
   const { dataset } = useDemoData();
-  const { meta } = dataset;
-
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <div className="app-header__brand">
-          <span className="app-header__mark">TourOps</span>
-          <span className="app-header__divider" aria-hidden="true" />
-          <span className="app-header__operator">{meta.operatorName}</span>
-        </div>
-        <div className="app-header__meta">
-          <span>{meta.homePort}</span>
-          <span className="app-header__divider" aria-hidden="true" />
-          <span>Demo date {formatDate(meta.referenceDate)}</span>
-        </div>
-      </header>
-
-      <DemoDataBanner text={meta.disclaimer} />
-
-      <main className="app-main">
-        <FoundationOverview />
-      </main>
-
-      <footer className="app-footer">
-        <span>Foundation v{meta.datasetVersion} · {meta.timezone}</span>
-        <span>See docs/product/foundation-v0.1.md</span>
-      </footer>
+    <div className="page">
+      <PageHeader title="Record not found" subtitle="This reference is not part of the synthetic demo dataset."
+        crumbs={crumbsFor(route, dataset).map((crumb) => ({
+          label: crumb.label,
+          onClick: crumb.route ? () => navigate(crumb.route as Route) : undefined,
+        }))} />
+      <Panel title="Nothing to show">
+        <EmptyState title="No such record" hint="Use the navigation to return to a populated screen."
+          action={{ label: 'Back to overview', onClick: () => navigate({ screen: 'dashboard' }) }} />
+      </Panel>
     </div>
   );
 }
 
-export function App() {
+function screenFor(route: Route, navigate: (next: Route) => void): ReactNode {
+  switch (route.screen) {
+    case 'dashboard': return <DashboardScreen navigate={navigate} />;
+    case 'enquiries': return <EnquiriesScreen navigate={navigate} />;
+    case 'enquiry': return <EnquiryDetailScreen id={route.id} navigate={navigate} />;
+    case 'quotes': return <QuotesScreen navigate={navigate} />;
+    case 'quote': return <QuoteDetailScreen id={route.id} navigate={navigate} />;
+    case 'bookings': return <BookingsScreen navigate={navigate} />;
+    case 'booking': return <BookingDetailScreen id={route.id} navigate={navigate} />;
+    case 'departures': return <DeparturesScreen navigate={navigate} />;
+    case 'departure': return <DepartureDetailScreen id={route.id} navigate={navigate} />;
+    case 'resources': return <ResourcesScreen tab={route.tab} navigate={navigate} />;
+  }
+}
+
+function Router(): ReactNode {
+  const { route, navigate } = useNavigation();
+  return (
+    <AppShell route={route} navigate={navigate}>
+      {screenFor(route, navigate) ?? <MissingRecord route={route} navigate={navigate} />}
+    </AppShell>
+  );
+}
+
+export function App(): ReactNode {
   return (
     <DemoDataProvider>
-      <Shell />
+      <Router />
     </DemoDataProvider>
   );
 }
