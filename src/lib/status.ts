@@ -7,12 +7,8 @@ import type {
   EnquiryStatus, PaymentStatus, QuoteStatus, VesselStatus,
 } from '../types/domain';
 
-export type StatusTone = 'neutral' | 'info' | 'positive' | 'attention' | 'critical' | 'muted';
-
-export interface StatusPresentation {
-  readonly label: string;
-  readonly tone: StatusTone;
-}
+import type { StatusPresentation } from '../shared/ui/tone';
+export type { StatusPresentation, StatusTone } from '../shared/ui/tone';
 
 export const ENQUIRY_STATUS: Record<EnquiryStatus, StatusPresentation> = {
   pending: { label: 'Pending', tone: 'attention' },

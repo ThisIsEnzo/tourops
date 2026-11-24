@@ -3,27 +3,16 @@ import type {
   Booking, BookingStatus, DemoDataset, Departure, DepartureStatus, Enquiry, EnquiryChannel,
   EnquiryStatus, PaymentStatus, Quote, QuoteStatus,
 } from '../types/domain';
+import type { Option } from '../shared/ui/option';
+import { matchesQuery } from '../shared/search/text';
+export type { Option } from '../shared/ui/option';
+export { matchesQuery } from '../shared/search/text';
+export { statusOptions } from '../shared/ui/option';
 import { outstandingBalance } from './money';
 import { findById } from './selectors';
 import {
   bookingCustomer, bookingDeparture, bookingExperience, quoteCustomer, quoteExperience,
 } from './operations';
-
-export function matchesQuery(query: string, fields: readonly (string | number | null | undefined)[]): boolean {
-  const needle = query.trim().toLowerCase();
-  if (needle === '') return true;
-  return fields.some((field) => field !== null && field !== undefined && String(field).toLowerCase().includes(needle));
-}
-
-export interface Option<T extends string> { readonly value: T; readonly label: string }
-
-export function statusOptions<T extends string>(
-  map: Record<T, { readonly label: string }>, allLabel: string,
-): readonly Option<T | 'all'>[] {
-  const all: Option<T | 'all'> = { value: 'all', label: allLabel };
-  const rest = (Object.keys(map) as T[]).map((key): Option<T | 'all'> => ({ value: key, label: map[key].label }));
-  return [all, ...rest];
-}
 
 export type EnquirySort = 'received-desc' | 'received-asc' | 'date-asc' | 'value-desc';
 export interface EnquiryFilter {

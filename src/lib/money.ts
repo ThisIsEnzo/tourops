@@ -3,6 +3,7 @@
  * Pure functions: usable from the data, domain, state and UI layers.
  */
 import type { Money, PaymentSummary, QuoteLineItem } from '../types/domain';
+import { formatMinorUnits } from '../shared/money/format';
 
 export const SATANG_PER_BAHT = 100;
 
@@ -76,22 +77,8 @@ export function outstandingBalance(payment: PaymentSummary): Money {
   return subtractMoney(payment.total, amountReceived(payment));
 }
 
-const FORMATTER = new Intl.NumberFormat('en-GB', {
-  style: 'currency',
-  currency: 'THB',
-  currencyDisplay: 'code',
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-});
-
-/**
- * Deterministic display string, e.g. `THB 28,000.00`.
- * Intl can emit U+00A0 or U+202F as currency/grouping separators depending on
- * the ICU build; normalise both to a plain space so Node, browsers and test
- * snapshots all agree.
- */
+/** TourOps currency policy stays here; the formatting engine is market-agnostic. */
+const THB_FORMAT = { currency: 'THB', locale: 'en-GB', minorUnitDigits: 2, currencyDisplay: 'code' } as const;
 export function formatMoney(amount: Money): string {
-  return FORMATTER
-    .format(amount.amountMinor / SATANG_PER_BAHT)
-    .replace(/[\u00A0\u202F]/g, ' ');
+  return formatMinorUnits(amount.amountMinor, THB_FORMAT);
 }

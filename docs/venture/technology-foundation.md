@@ -1,6 +1,6 @@
 # Technology Foundation Principles
 
-**Status:** conceptual boundaries only; no generalized platform implementation approved.
+**Status:** conceptual boundaries remain in force; TO-03B adds a small set of locally justified shared frontend primitives, not a generalized platform.
 
 ## 1. Objective
 
@@ -93,3 +93,35 @@ Until evidence requires them, do not build:
 - integrations with every incumbent platform.
 
 The foundation is a disciplined architecture and delivery method first. Shared code comes later.
+
+
+## TO-03B — Shared frontend primitives
+
+The following narrow utilities are implemented because the current TourOps UI already
+had concrete consumers and repeated behaviour. This does not approve a universal
+application framework or any backend/platform capability.
+
+| Module | Responsibility | Product boundary |
+|---|---|---|
+| `shared/ui/tone.ts` | Status presentation contract | Product modules own status maps and labels |
+| `shared/ui/option.ts` | Generic select option and status-option builder | Product modules own option content |
+| `shared/search/text.ts` | Case-insensitive substring matching | Product modules choose searchable fields |
+| `shared/money/format.ts` | Currency/locale/minor-unit formatting | Product modules own currency and rounding policy |
+| `shared/forms/parse.ts` | Controlled-input numeric parsing | Domain/workflow layer remains authoritative for validation |
+| `shared/navigation/hashLocation.ts` | Browser hash external-store subscription | Product modules own routes, parsing and breadcrumbs |
+| `shared/errors/ErrorBoundary.tsx` | React render-error containment | Products may provide their own fallback copy |
+| `shared/ui/ErrorState.tsx` | Product-neutral error presentation | No product tokens or product-specific copy |
+
+The shared UI components import their contracts directly from `shared/*`. Legacy
+re-exports in `lib/status` and `lib/filters` preserve existing consumer imports.
+TourOps-specific status maps, filtering, money policy, routes, screens, and workflows
+remain in their existing product modules.
+
+Error containment is applied at two levels: an outer boundary around providers and
+the router, plus a route-keyed boundary around the current screen. The outer boundary
+can catch failures in the router, shell, and provider subtree; the route boundary
+allows a failed screen to recover when navigation changes.
+
+New tests cover formatting, parsing, option generation, hash-store subscription cleanup,
+and error-boundary recovery. CI remains the authority for typecheck, lint, tests, and
+production build; no local execution is claimed by this change.
