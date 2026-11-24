@@ -3,7 +3,8 @@ import { DemoDataProvider, useDemoData } from './DemoDataProvider';
 import { AppShell } from './AppShell';
 import { useNavigation } from './useNavigation';
 import type { Route } from './navigation';
-import { crumbsFor } from './navigation';
+import { crumbsFor, routeToHash } from './navigation';
+import { ErrorBoundary } from '../shared/errors/ErrorBoundary';
 import { PageHeader } from '../components/ui/PageHeader';
 import type { CrumbView } from '../components/ui/PageHeader';
 import { EmptyState } from '../components/ui/EmptyState';
@@ -62,18 +63,22 @@ function Router(): ReactNode {
   const { route, navigate } = useNavigation();
   return (
     <AppShell route={route} navigate={navigate}>
-      {screenFor(route, navigate) ?? <MissingRecord route={route} navigate={navigate} />}
-      <WorkflowAside route={route} navigate={navigate} />
+      <ErrorBoundary key={routeToHash(route)}>
+        {screenFor(route, navigate) ?? <MissingRecord route={route} navigate={navigate} />}
+        <WorkflowAside route={route} navigate={navigate} />
+      </ErrorBoundary>
     </AppShell>
   );
 }
 
 export function App(): ReactNode {
   return (
-    <DemoDataProvider>
-      <WalkthroughProvider>
-        <Router />
-      </WalkthroughProvider>
-    </DemoDataProvider>
+    <ErrorBoundary>
+      <DemoDataProvider>
+        <WalkthroughProvider>
+          <Router />
+        </WalkthroughProvider>
+      </DemoDataProvider>
+    </ErrorBoundary>
   );
 }

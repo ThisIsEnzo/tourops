@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Icon } from './Icon';
-import type { Option } from '../../lib/filters';
+import type { Option } from '../../shared/ui/option';
 
 export function Toolbar({ query, onQuery, placeholder, children }: {
   query: string; onQuery: (value: string) => void; placeholder: string; children?: ReactNode;
@@ -21,7 +21,6 @@ export function Toolbar({ query, onQuery, placeholder, children }: {
     </div>
   );
 }
-
 export function FilterSelect<T extends string>({ label, value, options, onChange }: {
   label: string; value: T; options: readonly Option<T>[]; onChange: (value: T) => void;
 }): ReactNode {

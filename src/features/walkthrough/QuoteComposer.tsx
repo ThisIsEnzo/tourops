@@ -6,6 +6,7 @@ import { Panel } from '../../components/ui/Panel';
 import { Icon } from '../../components/ui/Icon';
 import { EmptyState } from '../../components/ui/EmptyState';
 import { formatMoney, fromMinor, percentOf, quoteSubtotal, quoteTotal } from '../../lib/money';
+import { integerFromInput, minorUnitsFromInput } from '../../shared/forms/parse';
 import type { Quote, QuoteLineItem } from '../../types/domain';
 import type { QuoteLineInput, WorkflowResult } from '../../lib/workflow';
 import { WorkflowFeedback } from './WorkflowFeedback';
@@ -20,8 +21,8 @@ interface EditableLine {
 function toInput(line: EditableLine): QuoteLineInput {
   return {
     label: line.label,
-    quantity: Number.parseInt(line.quantity, 10) || 0,
-    unitPriceMinor: Math.round((Number.parseFloat(line.unitPriceBaht) || 0) * 100),
+    quantity: integerFromInput(line.quantity),
+    unitPriceMinor: minorUnitsFromInput(line.unitPriceBaht),
   };
 }
 
@@ -48,7 +49,7 @@ export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navi
       const input = toInput(line);
       return { id: String(line.key), label: input.label, quantity: input.quantity, unitPrice: fromMinor(input.unitPriceMinor) };
     });
-    const discountMinor = Math.round((Number.parseFloat(discountBaht) || 0) * 100);
+    const discountMinor = minorUnitsFromInput(discountBaht);
     const discount = discountMinor > 0 ? fromMinor(discountMinor) : null;
     const subtotal = quoteSubtotal(items);
     const total = quoteTotal(items, discount);
@@ -132,7 +133,7 @@ export function QuoteComposer({ enquiryId, navigate }: { enquiryId: string; navi
         <label className="wf-field wf-field--grow">
           <span>Deposit {depositPercent}%</span>
           <input type="range" min={5} max={100} step={5} value={depositPercent}
-            onChange={(event) => setDepositPercent(Number.parseInt(event.target.value, 10))} />
+            onChange={(event) => setDepositPercent(integerFromInput(event.target.value))} />
         </label>
       </div>
 

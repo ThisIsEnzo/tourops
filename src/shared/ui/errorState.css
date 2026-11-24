@@ -1,0 +1,20 @@
+.shared-error-state {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; padding: 1.5rem;
+  border: 1px solid #d7c5c1; border-radius: 12px; background: #fff; color: #25313a;
+  box-shadow: 0 8px 28px rgba(20, 30, 40, .08);
+}
+.shared-error-state__mark {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid #d7aaa2;
+  border-radius: 50%; background: #fbefed; color: #8b3027; font-weight: 700;
+}
+.shared-error-state__content { min-width: 0; }
+.shared-error-state__eyebrow { margin: 0 0 .25rem; color: #765c50; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.shared-error-state__title { margin: 0; font-size: 1.25rem; line-height: 1.3; }
+.shared-error-state__message { margin: .5rem 0 0; color: #52606b; line-height: 1.5; }
+.shared-error-state__actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: .5rem; }
+.shared-error-state__actions button { padding: .5rem .875rem; border: 1px solid #344b5b; border-radius: 6px; background: #344b5b; color: #fff; cursor: pointer; }
+.shared-error-state__actions .shared-error-state__secondary { border-color: #c5cdd2; background: #fff; color: #344b5b; }
+.shared-error-state__details { grid-column: 1 / -1; border: 1px dashed #c5cdd2; border-radius: 6px; }
+.shared-error-state__details summary { padding: .625rem .75rem; color: #52606b; cursor: pointer; font-size: .8rem; }
+.shared-error-state__details pre { max-height: 12rem; overflow: auto; margin: 0; padding: 0 .75rem .75rem; white-space: pre-wrap; overflow-wrap: anywhere; color: #7b3028; font-size: .8rem; }
+@media (max-width: 560px) { .shared-error-state { grid-template-columns: 1fr; padding: 1rem; } .shared-error-state__actions { grid-column: 1; } }

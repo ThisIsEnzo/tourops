@@ -7,6 +7,7 @@ import { Meter } from '../../components/ui/Meter';
 import { StatusBadge } from '../../components/ui/StatusBadge';
 import { PAYMENT_STATUS } from '../../lib/status';
 import { amountReceived, formatMoney, outstandingBalance } from '../../lib/money';
+import { minorUnitsFromInput } from '../../shared/forms/parse';
 import type { PaymentEntry, PaymentMethod } from '../../types/domain';
 import type { WorkflowResult } from '../../lib/workflow';
 import { WorkflowFeedback } from './WorkflowFeedback';
@@ -38,7 +39,7 @@ export function DepositForm({ bookingId }: { bookingId: string }): ReactNode {
     sequence.current += 1;
     setResult(recordDeposit({
       bookingId,
-      amountMinor: Math.round((Number.parseFloat(amountBaht) || 0) * 100),
+      amountMinor: minorUnitsFromInput(amountBaht),
       method,
       submissionId: `ui-${bookingId}-${Date.now()}-${sequence.current}`,
     }));

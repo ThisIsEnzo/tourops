@@ -6,6 +6,7 @@ import { Icon } from '../../components/ui/Icon';
 import { StatusBadge } from '../../components/ui/StatusBadge';
 import { ASSIGNMENT_STATUS, EQUIPMENT_CONDITION, RESOURCE_KIND_LABEL, ROSTER_STATUS, VESSEL_KIND_LABEL, VESSEL_STATUS } from '../../lib/status';
 import { assignmentsFor, findById } from '../../lib/selectors';
+import { integerFromInput } from '../../shared/forms/parse';
 import type { AssignmentStatus, ResourceAssignment, ResourceKind } from '../../types/domain';
 import type { WorkflowResult } from '../../lib/workflow';
 import { WorkflowFeedback } from './WorkflowFeedback';
@@ -62,7 +63,7 @@ export function ResourceAssigner({ departureId }: { departureId: string }): Reac
       departureId,
       kind,
       resourceId: selected,
-      units: kind === 'equipment' ? Number.parseInt(units, 10) || 0 : 1,
+      units: kind === 'equipment' ? integerFromInput(units) : 1,
       status,
     }));
   };
